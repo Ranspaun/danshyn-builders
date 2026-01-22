@@ -3,344 +3,213 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DANSHYN BUILDERS SRL — Meșter la oră București</title>
+<title>DANSHYN BUILDERS SRL — Servicii Meșter în București</title>
 
 <style>
-:root{
-  --accent:#f97316;
-  --dark:#111827;
-  --card:#020617;
-  --text:#e5e7eb;
-}
-
+/* RESET + BASE */
 *{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif; background:#f5f5f5; color:#333;}
+a{color:inherit; text-decoration:none;}
+ul{list-style:none;}
 
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#111827;
-  color:var(--text);
-  line-height:1.6;
-}
+/* HEADER */
+header{background:#fff; position:sticky; top:0; box-shadow:0 2px 6px rgba(0,0,0,.1); z-index:1000;}
+.navbar{max-width:1200px; margin:auto; display:flex; justify-content:space-between; align-items:center; padding:14px 20px;}
+.logo{font-size:22px; font-weight:bold; color:#0f172a;}
+.lang-switch{font-size:14px;}
+.lang-switch span{margin-left:12px; cursor:pointer; font-weight:600;color:#555;}
+.lang-switch .active{color:#f97316;}
 
-/* ===== HEADER ===== */
-header{
-  background:
-    linear-gradient(rgba(17,24,39,.55),rgba(17,24,39,.55)),
-    url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80")
-    center/cover;
-}
+/* HERO */
+.hero{background:url('https://images.pexels.com/photos/442583/pexels-photo-442583.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat; padding:140px 20px; text-align:center; color:#fff;}
+.hero h1{font-size:40px;margin-bottom:12px; text-shadow:0 2px 4px rgba(0,0,0,.5);}
+.hero p{font-size:18px; margin-bottom:18px; text-shadow:0 2px 4px rgba(0,0,0,.4);}
+.hero .btn{background:#f97316;color:#fff;padding:12px 28px;border-radius:24px;font-weight:700;transition:.3s;}
+.hero .btn:hover{background:#e65f0d;}
 
-.topbar{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(2,6,23,.9);
-  backdrop-filter:blur(6px);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:12px 24px;
-}
+/* SERVICES */
+.services-section{max-width:1200px;margin:60px auto;padding:0 20px;}
+.services-title{text-align:center;font-size:28px;margin-bottom:30px;color:#0f172a;}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;}
+.service-card{background:#fff;border-radius:14px;box-shadow:0 4px 15px rgba(0,0,0,.1);overflow:hidden;transition:.3s;cursor:pointer;}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 8px 25px rgba(0,0,0,.15);}
+.service-card img{width:100%;height:180px;object-fit:cover;}
+.service-info{padding:18px;}
+.service-info h3{font-size:20px;color:#f97316;margin-bottom:8px;}
+.service-info p{font-size:15px;opacity:.9;margin-bottom:10px;}
+.service-info .price{font-weight:700;color:#0f172a;font-size:16px;}
 
-.logo{
-  font-weight:700;
-  letter-spacing:1px;
-  font-size:18px;
-}
+/* CONTACT */
+.contact-section{background:#fff;max-width:900px;margin:60px auto;padding:32px 20px;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.08);}
+.contact-section h2{font-size:26px;text-align:center;color:#0f172a;margin-bottom:18px;}
+.contact-grid{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;}
+.contact-info, .contact-form{flex:1;min-width:260px;}
+.contact-info p{margin-bottom:8px;font-size:15px;}
+.contact-form input, .contact-form button{width:100%;padding:12px; margin-bottom:12px; border:1px solid #ccc; border-radius:8px; font-size:15px;}
+.contact-form button{background:#f97316;color:#fff;font-weight:700;border:none;cursor:pointer;transition:.3s;}
+.contact-form button:hover{background:#e65f0d;}
 
-.contacts{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  font-size:14px;
-  white-space:nowrap;
-}
-
-.contacts a{
-  color:var(--text);
-  text-decoration:none;
-  transition:.3s;
-}
-.contacts a:hover{color:var(--accent)}
-
-.lang-switch a{
-  margin-left:10px;
-  color:#cbd5f5;
-  text-decoration:none;
-  font-weight:600;
-}
-.lang-switch a:hover{color:var(--accent)}
-
-/* ===== HERO ===== */
-.hero{
-  padding:90px 20px;
-  text-align:center;
-}
-.hero h1{
-  font-size:38px;
-  margin-bottom:10px;
-}
-.hero p{
-  font-size:18px;
-  margin-bottom:28px;
-}
-.btn{
-  display:inline-block;
-  background:var(--accent);
-  color:#020617;
-  padding:14px 34px;
-  border-radius:30px;
-  font-weight:700;
-  text-decoration:none;
-  transition:.3s;
-}
-.btn:hover{
-  box-shadow:0 0 20px rgba(249,115,22,.6);
-  transform:translateY(-2px);
-}
-
-/* ===== SECTIONS ===== */
-section{
-  max-width:1200px;
-  margin:auto;
-  padding:70px 20px;
-}
-
-.section-title{
-  text-align:center;
-  font-size:30px;
-  margin-bottom:40px;
-}
-
-/* ===== SERVICES ===== */
-.services{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:22px;
-}
-
-.service{
-  background:var(--card);
-  border-radius:16px;
-  overflow:hidden;
-  transition:.3s;
-  cursor:pointer;
-}
-.service:hover{
-  transform:translateY(-6px);
-  box-shadow:0 12px 30px rgba(0,0,0,.5);
-}
-
-.service img{
-  width:100%;
-  height:160px;
-  object-fit:cover;
-}
-
-.service-content{
-  padding:20px;
-}
-.service-content h3{
-  color:#fbbf24;
-  margin-bottom:10px;
-}
-.service-content p{
-  font-size:15px;
-  opacity:.9;
-}
-.price{
-  margin-top:12px;
-  font-weight:700;
-}
-
-/* ===== CONTACT ===== */
-.contact-box{
-  background:var(--card);
-  border-radius:18px;
-  padding:35px;
-  display:grid;
-  gap:25px;
-}
-
-.contact-box form{
-  display:grid;
-  gap:15px;
-}
-input,button{
-  padding:14px;
-  border-radius:10px;
-  border:none;
-  font-size:15px;
-}
-input{background:#020617;color:var(--text)}
-button{
-  background:var(--accent);
-  font-weight:700;
-  cursor:pointer;
-}
-button:hover{box-shadow:0 0 15px rgba(249,115,22,.5)}
-
-/* ===== FOOTER ===== */
-footer{
-  text-align:center;
-  padding:25px;
-  font-size:14px;
-  color:#94a3b8;
-  background:#020617;
-}.service img{
-  width:100%;
-  height:180px;
-  object-fit:cover;
-  display:block;
-}
+/* FOOTER */
+footer{background:#0f172a;color:#cbd5e1;text-align:center;padding:14px; font-size:14px;}
 </style>
 </head>
-
 <body>
 
 <header>
-  <div class="topbar">
-    <div class="logo">DANSHYN BUILDERS SRL</div>
-
-    <div class="contacts">
-      <span>📞 +40 725 135 667</span> •
-      <span>📞 +40 758 969 693</span> •
-      <a href="https://wa.me/40725135667" target="_blank">WhatsApp</a> •
-      <a href="https://t.me/" target="_blank">Telegram</a>
-    </div>
-
+  <div class="navbar">
+    <div class="logo" data-txt="logo">DANSHYN BUILDERS SRL</div>
     <div class="lang-switch">
-      <a href="index.html">RO</a>
-      <a href="ru.html">RU</a>
-      <a href="en.html">EN</a>
+      <span data-lang="ro" class="active">RO</span> |
+      <span data-lang="en">EN</span> |
+      <span data-lang="ru">RU</span>
     </div>
-  </div>
-
-  <div class="hero">
-    <h1>Meșter la oră în București</h1>
-    <p>Instalații • Electricitate • Reparații • Lucrări de construcții</p>
-    <a href="tel:+40725135667" class="btn">Sună acum</a>
   </div>
 </header>
 
-<section id="services">
-  <h2 class="section-title">Serviciile noastre</h2>
-
-  <div class="services">
-
-  <!-- PLUMBING -->
-  <div class="service" onclick="location.href='#contact'">
-    <img src="https://images.pexels.com/photos/4792509/pexels-photo-4792509.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Instalații sanitare">
-    <div class="service-content">
-      <h3>🚰 Instalații sanitare</h3>
-      <p>
-        Montaj și reparații baterii • toalete • lavoare • cabine de duș •
-        scurgeri • țevi • racorduri • filtre • robinete • și altele.
-      </p>
-      <div class="price">Prețuri de la 150 RON</div>
-    </div>
-  </div>
-
-  <!-- ELECTRIC -->
-  <div class="service" onclick="location.href='#contact'">
-    <img src="electric.jpg" alt="Electricitate">
-    <div class="service-content">
-      <h3>💡 Electricitate</h3>
-      <p>
-        Prize • întrerupătoare • corpuri de iluminat • tablouri electrice •
-        siguranțe • cablaje • diagnoză • reparații • și altele.
-      </p>
-      <div class="price">Prețuri de la 150 RON</div>
-    </div>
-  </div>
-
-  <!-- REPAIR -->
-  <div class="service" onclick="location.href='#contact'">
-    <img src="https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Reparații">
-    <div class="service-content">
-      <h3>🧱 Reparații / Construcții</h3>
-      <p>
-        Gips-carton • zugrăveli • finisaje • demolări • tencuieli •
-        placări gresie/faianță • pardoseli • și altele.
-      </p>
-      <div class="price">Prețuri de la 200 RON</div>
-    </div>
-  </div>
-
-  <!-- FLOORING -->
-  <div class="service" onclick="location.href='#contact'">
-    <img src="https://images.pexels.com/photos/534228/pexels-photo-534228.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Pardoseli">
-    <div class="service-content">
-      <h3>🪵 Pardoseli</h3>
-      <p>
-        Montaj laminat • parchet • plinte • nivelare •
-        demontare pardoseli vechi • și altele.
-      </p>
-      <div class="price">Prețuri de la 180 RON</div>
-    </div>
-  </div>
-
-  <!-- FURNITURE -->
-  <div class="service" onclick="location.href='#contact'">
-    <img src="https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Mobilă">
-    <div class="service-content">
-      <h3>🪑 Mobilă</h3>
-      <p>
-        Asamblare mobilier • montaj dulapuri • bucătării •
-        reglaje • fixări pe perete • adaptări • și altele.
-      </p>
-      <div class="price">Prețuri de la 120 RON</div>
-    </div>
-  </div>
-
-  <!-- OTHER -->
-  <div class="service" onclick="location.href='#contact'">
-    <img src="https://images.pexels.com/photos/834892/pexels-photo-834892.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Alte lucrări">
-    <div class="service-content">
-      <h3>➕ Alte lucrări</h3>
-      <p>
-        Lucrări diverse pentru locuințe și spații comerciale,
-        la cerere • intervenții rapide • și altele.
-      </p>
-      <div class="price">Prețuri de la 150 RON</div>
-    </div>
-  </div>
-
-</div>
+<section class="hero">
+  <h1 data-txt="heroTitle">Meșter la oră în București</h1>
+  <p data-txt="heroDesc">Profesioniști în reparații, electricitate, instalații sanitare și construcții.</p>
+  <a href="#contact" class="btn" data-txt="heroBtn">Contactează-ne acum</a>
 </section>
 
-<section id="contact">
-  <h2 class="section-title">Contact</h2>
-
-  <div class="contact-box">
-    <div>
-      <p><strong>DANSHYN BUILDERS SRL</strong></p>
-      <p>📍 București</p>
-      <p>🕘 Program: 09:00 – 18:00</p>
-      <p>📞 +40 725 135 667 (principal)</p>
-      <p>📞 +40 758 969 693</p>
+<section class="services-section">
+  <h2 class="services-title" data-txt="servicesTitle">Serviciile noastre</h2>
+  <div class="services-grid">
+    <div class="service-card" onclick="location.href='#contact'">
+      <img src="https://images.pexels.com/photos/4792509/pexels-photo-4792509.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="">
+      <div class="service-info">
+        <h3 data-txt="serv1Title">Instalații sanitare</h3>
+        <p data-txt="serv1Desc">Montaj și reparații instalații sanitare și altele.</p>
+        <div class="price" data-txt="serv1Price">Prețuri de la 150 RON</div>
+      </div>
     </div>
+    <div class="service-card" onclick="location.href='#contact'">
+      <img src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="">
+      <div class="service-info">
+        <h3 data-txt="serv2Title">Electricitate</h3>
+        <p data-txt="serv2Desc">Lucrări electrice sigure și profesionale și altele.</p>
+        <div class="price" data-txt="serv2Price">Prețuri de la 150 RON</div>
+      </div>
+    </div>
+    <div class="service-card" onclick="location.href='#contact'">
+      <img src="https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="">
+      <div class="service-info">
+        <h3 data-txt="serv3Title">Reparații / Construcții</h3>
+        <p data-txt="serv3Desc">Gips-carton, finisaje, demolări și altele.</p>
+        <div class="price" data-txt="serv3Price">Prețuri de la 200 RON</div>
+      </div>
+    </div>
+    <div class="service-card" onclick="location.href='#contact'">
+      <img src="https://images.pexels.com/photos/534228/pexels-photo-534228.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="">
+      <div class="service-info">
+        <h3 data-txt="serv4Title">Pardoseli</h3>
+        <p data-txt="serv4Desc">Montaj laminat, parchet, pardoseli și altele.</p>
+        <div class="price" data-txt="serv4Price">Prețuri de la 180 RON</div>
+      </div>
+    </div>
+    <div class="service-card" onclick="location.href='#contact'">
+      <img src="https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="">
+      <div class="service-info">
+        <h3 data-txt="serv5Title">Mobilă</h3>
+        <p data-txt="serv5Desc">Asamblare și montaj mobilier și altele.</p>
+        <div class="price" data-txt="serv5Price">Prețuri de la 120 RON</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <form>
+<section id="contact" class="contact-section">
+  <h2 data-txt="contactTitle">Contact</h2>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <p><strong>DANSHYN BUILDERS SRL</strong></p>
+      <p data-txt="contactLoc">📍 București</p>
+      <p data-txt="contactHours">🕘 Program: 09:00 – 18:00</p>
+      <p data-txt="contactPhone1">📞 +40 725 135 667 (principal)</p>
+      <p data-txt="contactPhone2">📞 +40 758 969 693</p>
+      <p>
+        <a href="https://wa.me/40725135667" target="_blank">WhatsApp</a> •
+        <a href="https://t.me/" target="_blank">Telegram</a>
+      </p>
+    </div>
+    <div class="contact-form">
       <input type="text" placeholder="Nume">
       <input type="tel" placeholder="Telefon">
-      <button type="submit">Trimite cererea</button>
-    </form>
+      <button data-txt="contactBtn">Trimite cererea</button>
+    </div>
   </div>
 </section>
 
 <footer>
-© 2026 DANSHYN BUILDERS SRL • Toate drepturile rezervate
+  <span data-txt="footer">© 2026 DANSHYN BUILDERS SRL • Toate drepturile rezervate</span>
 </footer>
+
+<script>
+// TEXT DICTIONARY
+const textData = {
+  ro: {
+    logo: "DANSHYN BUILDERS SRL",
+    heroTitle: "Meșter la oră în București",
+    heroDesc: "Profesioniști în reparații, electricitate, instalații sanitare și construcții.",
+    heroBtn: "Contactează-ne acum",
+    servicesTitle: "Serviciile noastre",
+    serv1Title: "Instalații sanitare", serv1Desc: "Montaj și reparații instalații sanitare și altele.", serv1Price:"Prețuri de la 150 RON",
+    serv2Title: "Electricitate", serv2Desc: "Lucrări electrice sigure și profesionale și altele.", serv2Price:"Prețuri de la 150 RON",
+    serv3Title: "Reparații / Construcții", serv3Desc: "Gips-carton, finisaje, demolări și altele.", serv3Price:"Prețuri de la 200 RON",
+    serv4Title: "Pardoseli", serv4Desc: "Montaj laminat, parchet, pardoseli și altele.", serv4Price:"Prețuri de la 180 RON",
+    serv5Title: "Mobilă", serv5Desc: "Asamblare și montaj mobilier și altele.", serv5Price:"Prețuri de la 120 RON",
+    contactTitle:"Contact", contactLoc:"📍 București", contactHours:"🕘 Program: 09:00 – 18:00",
+    contactPhone1:"📞 +40 725 135 667 (principal)", contactPhone2:"📞 +40 758 969 693",
+    contactBtn:"Trimite cererea", footer:"© 2026 DANSHYN BUILDERS SRL • Toate drepturile rezervate"
+  },
+  en: {
+    logo: "DANSHYN BUILDERS SRL",
+    heroTitle: "Handyman Services in Bucharest",
+    heroDesc: "Professional repairs, electrical and plumbing services.",
+    heroBtn: "Contact Us Now",
+    servicesTitle: "Our Services",
+    serv1Title: "Plumbing", serv1Desc: "Installation & repairs, and more.", serv1Price:"Prices from 150 RON",
+    serv2Title: "Electrical", serv2Desc: "Safe and professional electrical work, and more.", serv2Price:"Prices from 150 RON",
+    serv3Title: "Repairs / Construction", serv3Desc: "Drywall, finishes, demolition, and more.", serv3Price:"Prices from 200 RON",
+    serv4Title: "Flooring", serv4Desc: "Laminate, parquet, and more.", serv4Price:"Prices from 180 RON",
+    serv5Title: "Furniture", serv5Desc: "Assembly & installation, and more.", serv5Price:"Prices from 120 RON",
+    contactTitle:"Contact", contactLoc:"📍 Bucharest", contactHours:"🕘 Hours: 09:00 – 18:00",
+    contactPhone1:"📞 +40 725 135 667 (main)", contactPhone2:"📞 +40 758 969 693",
+    contactBtn:"Send Request", footer:"© 2026 DANSHYN BUILDERS SRL • All rights reserved"
+  },
+  ru: {
+    logo: "DANSHYN BUILDERS SRL",
+    heroTitle: "Муж на час в Бухаресте",
+    heroDesc: "Профессиональные ремонт, электрика и сантехника.",
+    heroBtn: "Связаться сейчас",
+    servicesTitle: "Наши услуги",
+    serv1Title: "Сантехника", serv1Desc: "Установка и ремонт, и другое.", serv1Price:"Цены от 150 RON",
+    serv2Title: "Электрика", serv2Desc: "Безопасные электромонтажные работы, и другое.", serv2Price:"Цены от 150 RON",
+    serv3Title: "Ремонт / Строительство", serv3Desc: "Гипсокартон, отделка, демонтаж, и другое.", serv3Price:"Цены от 200 RON",
+    serv4Title: "Напольные покрытия", serv4Desc: "Ламинат, паркет, и другое.", serv4Price:"Цены от 180 RON",
+    serv5Title: "Мебель", serv5Desc: "Сборка и монтаж, и другое.", serv5Price:"Цены от 120 RON",
+    contactTitle:"Контакт", contactLoc:"📍 Бухарест", contactHours:"🕘 Время: 09:00 – 18:00",
+    contactPhone1:"📞 +40 725 135 667 (основной)", contactPhone2:"📞 +40 758 969 693",
+    contactBtn:"Отправить запрос", footer:"© 2026 DANSHYN BUILDERS SRL • Все права защищены"
+  }
+};
+
+// APPLY LANGUAGE
+const langSwitchEls = document.querySelectorAll('.lang-switch span');
+langSwitchEls.forEach(el=>{
+  el.addEventListener('click',()=>{
+    const selected = el.getAttribute('data-lang');
+    Object.keys(textData[selected]).forEach(key=>{
+      const nodes = document.querySelectorAll("[data-txt='"+key+"']");
+      nodes.forEach(node=>{
+        node.textContent = textData[selected][key];
+      });
+    });
+    langSwitchEls.forEach(x=>x.classList.remove('active'));
+    el.classList.add('active');
+  });
+});
+</script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
