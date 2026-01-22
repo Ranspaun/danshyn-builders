@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DANSHYN BUILDERS SRL | Handyman București</title>
+<title>Meșter la oră | București</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -17,7 +17,9 @@ a{text-decoration:none;color:inherit}
 /* HEADER */
 header{
   background:#fff;
-  position:sticky;top:0;z-index:1000;
+  position:sticky;
+  top:0;
+  z-index:1000;
   box-shadow:0 2px 8px rgba(0,0,0,.08);
 }
 .nav{
@@ -35,20 +37,14 @@ header{
 }
 .header-right{
   display:flex;
-  align-items:center;
   gap:14px;
-  flex-wrap:wrap;
+  align-items:center;
   font-size:14px;
+  flex-wrap:wrap;
 }
 .header-right a{font-weight:600}
 .whatsapp{color:#25D366}
 .telegram{color:#229ED9}
-.lang span{
-  cursor:pointer;
-  font-weight:700;
-  color:#64748b;
-}
-.lang .active{color:#2563eb}
 
 /* HERO */
 .hero{
@@ -58,25 +54,22 @@ header{
   background-size:cover;
   background-position:center;
   padding:120px 20px;
-}
-.hero-inner{
-  max-width:1100px;
-  margin:auto;
+  text-align:center;
 }
 .hero h1{
-  font-size:42px;
-  margin-bottom:16px;
+  font-size:44px;
+  margin-bottom:14px;
 }
 .hero p{
   font-size:18px;
   color:#334155;
-  margin-bottom:24px;
+  margin-bottom:26px;
 }
 .cta{
   display:inline-block;
   background:#2563eb;
   color:#fff;
-  padding:14px 32px;
+  padding:14px 34px;
   border-radius:30px;
   font-weight:700;
 }
@@ -105,8 +98,8 @@ header{
   border-radius:18px;
   box-shadow:0 6px 22px rgba(0,0,0,.08);
   overflow:hidden;
-  transition:.3s;
   cursor:pointer;
+  transition:.3s;
 }
 .card:hover{
   transform:translateY(-6px);
@@ -168,10 +161,6 @@ footer{
   font-size:14px;
   color:#64748b;
 }
-
-@media(max-width:768px){
-  .hero h1{font-size:34px}
-}
 </style>
 </head>
 
@@ -179,85 +168,81 @@ footer{
 
 <header>
   <div class="nav">
-    <div class="logo" data-t="logo">DANSHYN BUILDERS SRL</div>
+    <div class="logo">Meșter la oră</div>
     <div class="header-right">
       <a href="tel:+40725135667">📞 +40 725 135 667</a>
       <a href="tel:+40758969693">+40 758 969 693</a>
       <a class="whatsapp" href="https://wa.me/40725135667" target="_blank">WhatsApp</a>
       <a class="telegram" href="https://t.me/" target="_blank">Telegram</a>
-      <div class="lang">
-        <span data-lang="ro" class="active">RO</span> |
-        <span data-lang="en">EN</span> |
-        <span data-lang="ru">RU</span>
-      </div>
     </div>
   </div>
 </header>
 
 <section class="hero">
-  <div class="hero-inner">
-    <h1 data-t="heroTitle">Servicii profesionale de reparații în București</h1>
-    <p data-t="heroDesc">Electricitate, instalații sanitare, renovări și construcții. Experiență 10+ ani.</p>
-    <a href="#contact" class="cta" data-t="heroBtn">Contactează-ne acum</a>
-  </div>
+  <h1>Meșter la oră</h1>
+  <p>Electricitate, instalații sanitare, reparații și construcții. Experiență 10+ ani.</p>
+  <a href="#contact" class="cta">Contactează-ne acum</a>
 </section>
 
 <section class="section">
-  <h2 data-t="services">Serviciile noastre</h2>
+  <h2>Serviciile noastre</h2>
   <div class="cards">
+
     <div class="card" onclick="location.href='#contact'">
       <img src="https://images.pexels.com/photos/4792509/pexels-photo-4792509.jpeg">
       <div class="card-body">
-        <h3 data-t="s1t">Instalații sanitare</h3>
-        <p data-t="s1d">WC, chiuvete, baterii, țevi, scurgeri și altele.</p>
-        <div class="price" data-t="s1p">De la 150 RON</div>
+        <h3>Instalații sanitare</h3>
+        <p>WC, chiuvete, baterii, țevi, scurgeri, racordări și altele.</p>
+        <div class="price">De la 150 RON</div>
       </div>
     </div>
 
     <div class="card" onclick="location.href='#contact'">
       <img src="electric.jpg">
       <div class="card-body">
-        <h3 data-t="s2t">Electricitate</h3>
-        <p data-t="s2d">Prize, tablouri electrice, iluminat și altele.</p>
-        <div class="price" data-t="s2p">De la 150 RON</div>
+        <h3>Electricitate</h3>
+        <p>Prize, întrerupătoare, tablouri electrice, iluminat, reparații și altele.</p>
+        <div class="price">De la 150 RON</div>
       </div>
     </div>
 
     <div class="card" onclick="location.href='#contact'">
       <img src="https://images.pexels.com/photos/159306/pexels-photo-159306.jpeg">
       <div class="card-body">
-        <h3 data-t="s3t">Reparații / Construcții</h3>
-        <p data-t="s3d">Gips-carton, finisaje, demolări și altele.</p>
-        <div class="price" data-t="s3p">De la 200 RON</div>
+        <h3>Reparații / construcții</h3>
+        <p>Gips-carton, zugrăveli, finisaje, demolări și altele.</p>
+        <div class="price">De la 200 RON</div>
       </div>
     </div>
 
     <div class="card" onclick="location.href='#contact'">
       <img src="https://images.pexels.com/photos/534228/pexels-photo-534228.jpeg">
       <div class="card-body">
-        <h3 data-t="s4t">Mobilă</h3>
-        <p data-t="s4d">Asamblare și montaj mobilier și altele.</p>
-        <div class="price" data-t="s4p">De la 120 RON</div>
+        <h3>Mobilă</h3>
+        <p>Asamblare, montaj mobilier, bucătării și altele.</p>
+        <div class="price">De la 120 RON</div>
       </div>
     </div>
+
   </div>
 </section>
 
 <section id="contact" class="section">
   <div class="contact">
-    <h2 data-t="contact">Contact</h2>
+    <h2>Contact</h2>
     <div class="contact-grid">
       <div>
         <p><strong>DANSHYN BUILDERS SRL</strong></p>
-        <p data-t="city">📍 București</p>
-        <p data-t="hours">🕘 09:00 – 18:00</p>
+        <p>📍 București</p>
+        <p>🕘 09:00 – 18:00</p>
         <p>📞 +40 725 135 667</p>
         <p>📞 +40 758 969 693</p>
       </div>
+
       <div class="contact-form">
-        <input type="text" data-t-ph="name" placeholder="Nume">
-        <input type="tel" data-t-ph="phone" placeholder="Telefon">
-        <button data-t="send">Trimite cererea</button>
+        <input type="text" id="name" placeholder="Nume">
+        <input type="tel" id="phone" placeholder="Telefon">
+        <button onclick="sendWhatsApp()">Trimite cererea</button>
       </div>
     </div>
   </div>
@@ -268,60 +253,15 @@ footer{
 </footer>
 
 <script>
-const txt={
-ro:{
-heroTitle:"Servicii profesionale de reparații în București",
-heroDesc:"Electricitate, instalații sanitare, renovări și construcții. Experiență 10+ ani.",
-heroBtn:"Contactează-ne acum",
-services:"Serviciile noastre",
-s1t:"Instalații sanitare",s1d:"WC, chiuvete, baterii, țevi, scurgeri și altele.",s1p:"De la 150 RON",
-s2t:"Electricitate",s2d:"Prize, tablouri electrice, iluminat și altele.",s2p:"De la 150 RON",
-s3t:"Reparații / Construcții",s3d:"Gips-carton, finisaje, demolări și altele.",s3p:"De la 200 RON",
-s4t:"Mobilă",s4d:"Asamblare și montaj mobilier și altele.",s4p:"De la 120 RON",
-contact:"Contact",city:"📍 București",hours:"🕘 09:00 – 18:00",send:"Trimite cererea",
-name:"Nume",phone:"Telefon"
-},
-en:{
-heroTitle:"Professional handyman services in Bucharest",
-heroDesc:"Electrical, plumbing, renovation and construction services. 10+ years experience.",
-heroBtn:"Contact us now",
-services:"Our services",
-s1t:"Plumbing",s1d:"Toilets, sinks, faucets, pipes and more.",s1p:"From 150 RON",
-s2t:"Electrical",s2d:"Sockets, panels, lighting and more.",s2p:"From 150 RON",
-s3t:"Repairs / Construction",s3d:"Drywall, finishing, demolition and more.",s3p:"From 200 RON",
-s4t:"Furniture",s4d:"Assembly and installation and more.",s4p:"From 120 RON",
-contact:"Contact",city:"📍 Bucharest",hours:"🕘 09:00 – 18:00",send:"Send request",
-name:"Name",phone:"Phone"
-},
-ru:{
-heroTitle:"Профессиональные услуги мастера в Бухаресте",
-heroDesc:"Электрика, сантехника, ремонт и строительство. Опыт 10+ лет.",
-heroBtn:"Связаться сейчас",
-services:"Наши услуги",
-s1t:"Сантехника",s1d:"Унитазы, раковины, смесители, трубы и другое.",s1p:"От 150 RON",
-s2t:"Электрика",s2d:"Розетки, щиты, освещение и другое.",s2p:"От 150 RON",
-s3t:"Ремонт / Строительство",s3d:"Гипсокартон, отделка, демонтаж и другое.",s3p:"От 200 RON",
-s4t:"Мебель",s4d:"Сборка и установка и другое.",s4p:"От 120 RON",
-contact:"Контакты",city:"📍 Бухарест",hours:"🕘 09:00 – 18:00",send:"Отправить заявку",
-name:"Имя",phone:"Телефон"
+function sendWhatsApp(){
+  const name = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+  const text =
+    "Cerere nouă:%0A" +
+    "Nume: " + name + "%0A" +
+    "Telefon: " + phone;
+  window.open("https://wa.me/40725135667?text=" + text, "_blank");
 }
-};
-
-document.querySelectorAll('.lang span').forEach(el=>{
-  el.onclick=()=>{
-    const l=el.dataset.lang;
-    document.querySelectorAll('[data-t]').forEach(n=>{
-      const k=n.dataset.t;
-      if(txt[l][k]) n.textContent=txt[l][k];
-    });
-    document.querySelectorAll('[data-t-ph]').forEach(n=>{
-      const k=n.dataset.tPh;
-      if(txt[l][k]) n.placeholder=txt[l][k];
-    });
-    document.querySelectorAll('.lang span').forEach(x=>x.classList.remove('active'));
-    el.classList.add('active');
-  }
-});
 </script>
 
 </body>
