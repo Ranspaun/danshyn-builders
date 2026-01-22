@@ -1,92 +1,168 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ro">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DANSHYN BUILDERS SRL — Муж на час в Бухаресте</title>
 <style>
+:root{
+--accent:#f97316;
+--dark:#020617;
+--light:#f8fafc;
+}
+*{box-sizing:border-box;margin:0;padding:0}
 body{
 font-family:Arial,Helvetica,sans-serif;
 background:#0f172a;
 color:#e5e7eb;
-margin:0;
 line-height:1.6;
 }
 header{
 background:linear-gradient(rgba(15,23,42,.6),rgba(15,23,42,.6)),
 url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1500&q=80') center/cover;
-padding:60px 20px;
+}
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 20px;
+font-size:14px;
+background:rgba(2,6,23,.8);
+}
+.topbar .contacts{
+display:flex;
+gap:12px;
+align-items:center;
+flex-wrap:wrap;
+}
+.contacts a{
+color:#e5e7eb;
+text-decoration:none;
+transition:.3s;
+}
+.contacts a:hover{
+color:var(--accent);
+}
+.logo{
+font-size:20px;
+font-weight:bold;
+letter-spacing:1px;
+}
+.hero{
+padding:80px 20px;
 text-align:center;
 }
-h1{font-size:36px;margin-bottom:10px}
-p{font-size:18px}
+.hero h1{
+font-size:36px;
+margin-bottom:10px;
+}
+.hero p{
+font-size:18px;
+margin-bottom:25px;
+}
 .btn{
 display:inline-block;
-margin-top:20px;
-background:#22c55e;
+background:var(--accent);
 color:#020617;
 padding:14px 28px;
 border-radius:30px;
 font-weight:bold;
 text-decoration:none;
+transition:.3s;
+}
+.btn:hover{
+box-shadow:0 0 15px rgba(249,115,22,.7);
 }
 section{
-max-width:1000px;
-margin:40px auto;
-padding:0 20px;
+padding:60px 20px;
+max-width:1100px;
+margin:auto;
 }
-.block{
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+.service{
 background:#020617;
 padding:25px;
 border-radius:14px;
-margin-bottom:20px;
+transition:.3s;
+}
+.service:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(0,0,0,.5);
+}
+.service h3{
+margin-bottom:10px;
+color:#fbbf24;
+}
+.contact-box{
+background:#020617;
+padding:30px;
+border-radius:18px;
+text-align:center;
 }
 footer{
 text-align:center;
 padding:20px;
-color:#94a3b8;
 font-size:14px;
-}
-.lang{
-text-align:center;
-margin-top:15px;
-}
-.lang a{
-color:#fbbf24;
-margin:0 6px;
-text-decoration:none;
+color:#94a3b8;
 }
 </style>
 </head>
 <body>
 
 <header>
-<h1>Муж на час в Бухаресте</h1>
-<p>Сантехника • Электрика • Ремонт • Строительные работы</p>
-<a class="btn" href="tel:+40725135667">Позвонить сейчас</a>
+<div class="topbar">
+<div class="logo">DANSHYN BUILDERS SRL</div>
+<div class="contacts">
+<span>📞 +40 725 135 667</span> •
+<span>📞 +40 758 969 693</span> •
+<a href="https://wa.me/40725135667" target="_blank">WhatsApp</a> •
+<a href="https://t.me/" target="_blank">Telegram</a>
+</div>
+</div>
 
-<div class="lang">
-<a href="index.html">RO</a> |
-<a href="en.html">EN</a>
+<div class="hero">
+<h1>Meșter la oră în București</h1>
+<p>Быстрый ремонт • Электрика • Сантехника • Строительные работы</p>
+<a class="btn" href="tel:+40725135667">Позвонить сейчас</a>
 </div>
 </header>
 
 <section>
-<div class="block">
-<h2>Наши услуги</h2>
-<p>🔧 Мелкий бытовой ремонт и другое</p>
-<p>🚰 Сантехника: монтаж и ремонт и другое</p>
-<p>💡 Электрика: розетки, свет, проводка и другое</p>
-<p>🧱 Ремонт и строительство и другое</p>
-<p>🪑 Сборка и установка мебели и другое</p>
+<h2 style="text-align:center;margin-bottom:30px">Наши услуги</h2>
+<div class="services">
+<div class="service">
+<h3>🚰 Instalații sanitare</h3>
+<p>Montaj și reparații robinete, toalete, scurgeri, baterii, cabine duș și altele.</p>
+<p><strong>Цены от:</strong> 150 RON</p>
 </div>
+<div class="service">
+<h3>💡 Electricitate</h3>
+<p>Prize, întrerupătoare, corpuri iluminat, tablouri electrice și altele.</p>
+<p><strong>Prețuri de la:</strong> 150 RON</p>
+</div>
+<div class="service">
+<h3>🧱 Reparații / Construcții</h3>
+<p>Gips-carton, finisaje, demolări, pardoseli, placări și altele.</p>
+<p><strong>Prețuri de la:</strong> 200 RON</p>
+</div>
+<div class="service">
+<h3>🪑 Mobilă</h3>
+<p>Asamblare și montaj mobilier, reglaje, fixări și altele.</p>
+<p><strong>Prețuri de la:</strong> 120 RON</p>
+</div>
+</div>
+</section>
 
-<div class="block">
+<section>
+<div class="contact-box">
 <h2>Контакты</h2>
-<p><strong>DANSHYN BUILDERS SRL</strong></p>
-<p>📞 +40 725 135 667 (основной)</p>
+<p><strong>Program:</strong> 09:00 – 18:00</p>
+<p>📞 +40 725 135 667 (principal)</p>
 <p>📞 +40 758 969 693</p>
-<p>🕘 09:00 – 18:00</p>
 <p>
 <a href="https://wa.me/40725135667">WhatsApp</a> •
 <a href="https://t.me/">Telegram</a>
@@ -95,7 +171,7 @@ text-decoration:none;
 </section>
 
 <footer>
-© 2026 DANSHYN BUILDERS SRL • Бухарест
+© 2026 DANSHYN BUILDERS SRL • București
 </footer>
 
 </body>
