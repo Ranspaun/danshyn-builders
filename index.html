@@ -8,7 +8,7 @@
 <style>
 :root{
   --accent:#f97316;
-  --dark:#0f172a;
+  --dark:#111827;
   --card:#020617;
   --text:#e5e7eb;
 }
@@ -25,7 +25,7 @@ body{
 /* ===== HEADER ===== */
 header{
   background:
-    linear-gradient(rgba(15,23,42,.55),rgba(15,23,42,.55)),
+    linear-gradient(rgba(17,24,39,.55),rgba(17,24,39,.55)),
     url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80")
     center/cover;
 }
@@ -53,6 +53,7 @@ header{
   align-items:center;
   gap:14px;
   font-size:14px;
+  white-space:nowrap;
 }
 
 .contacts a{
@@ -74,7 +75,6 @@ header{
 .hero{
   padding:90px 20px;
   text-align:center;
-  animation:fadeUp 1s ease;
 }
 .hero h1{
   font-size:38px;
@@ -95,7 +95,7 @@ header{
   transition:.3s;
 }
 .btn:hover{
-  box-shadow:0 0 20px rgba(249,115,22,.7);
+  box-shadow:0 0 20px rgba(249,115,22,.6);
   transform:translateY(-2px);
 }
 
@@ -123,7 +123,7 @@ section{
   background:var(--card);
   border-radius:16px;
   overflow:hidden;
-  transition:.4s;
+  transition:.3s;
   cursor:pointer;
 }
 .service:hover{
@@ -178,6 +178,111 @@ button{
   font-weight:700;
   cursor:pointer;
 }
-button:hover{box-shadow:0 0 15px rgba(249,115,22,.6)}
+button:hover{box-shadow:0 0 15px rgba(249,115,22,.5)}
 
-/* ===== FOOTE*
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:25px;
+  font-size:14px;
+  color:#94a3b8;
+  background:#020617;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="topbar">
+    <div class="logo">DANSHYN BUILDERS SRL</div>
+
+    <div class="contacts">
+      <span>📞 +40 725 135 667</span> •
+      <span>📞 +40 758 969 693</span> •
+      <a href="https://wa.me/40725135667" target="_blank">WhatsApp</a> •
+      <a href="https://t.me/" target="_blank">Telegram</a>
+    </div>
+
+    <div class="lang-switch">
+      <a href="index.html">RO</a>
+      <a href="ru.html">RU</a>
+      <a href="en.html">EN</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>Meșter la oră în București</h1>
+    <p>Instalații • Electricitate • Reparații • Lucrări de construcții</p>
+    <a href="tel:+40725135667" class="btn">Sună acum</a>
+  </div>
+</header>
+
+<section id="services">
+  <h2 class="section-title">Serviciile noastre</h2>
+
+  <div class="services">
+    <div class="service" onclick="location.href='#contact'">
+      <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" alt="">
+      <div class="service-content">
+        <h3>🚰 Instalații sanitare</h3>
+        <p>Montaj și reparații baterii, toalete, scurgeri, cabine duș, țevi și altele.</p>
+        <div class="price">Prețuri de la 150 RON</div>
+      </div>
+    </div>
+
+    <div class="service" onclick="location.href='#contact'">
+      <img src="https://images.unsplash.com/photo-1581091870622-2c5c8c19fbd6" alt="">
+      <div class="service-content">
+        <h3>💡 Electricitate</h3>
+        <p>Prize, întrerupătoare, corpuri iluminat, tablouri electrice și altele.</p>
+        <div class="price">Prețuri de la 150 RON</div>
+      </div>
+    </div>
+
+    <div class="service" onclick="location.href='#contact'">
+      <img src="https://images.unsplash.com/photo-1590650153855-d9e808231d41" alt="">
+      <div class="service-content">
+        <h3>🧱 Reparații / Construcții</h3>
+        <p>Gips-carton, finisaje, demolări, placări, pardoseli și altele.</p>
+        <div class="price">Prețuri de la 200 RON</div>
+      </div>
+    </div>
+
+    <div class="service" onclick="location.href='#contact'">
+      <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed" alt="">
+      <div class="service-content">
+        <h3>🪑 Mobilă</h3>
+        <p>Asamblare, montaj, reglaje, fixări mobilier și altele.</p>
+        <div class="price">Prețuri de la 120 RON</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="section-title">Contact</h2>
+
+  <div class="contact-box">
+    <div>
+      <p><strong>DANSHYN BUILDERS SRL</strong></p>
+      <p>📍 București</p>
+      <p>🕘 Program: 09:00 – 18:00</p>
+      <p>📞 +40 725 135 667 (principal)</p>
+      <p>📞 +40 758 969 693</p>
+    </div>
+
+    <form>
+      <input type="text" placeholder="Nume">
+      <input type="tel" placeholder="Telefon">
+      <button type="submit">Trimite cererea</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+© 2026 DANSHYN BUILDERS SRL • Toate drepturile rezervate
+</footer>
+
+</body>
+</html>
