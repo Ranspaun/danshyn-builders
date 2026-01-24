@@ -1,1 +1,193 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meșter la oră</title>
 
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#eef3fb;
+}
+header{
+  position:sticky;
+  top:0;
+  background:#fff;
+  padding:15px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 4px 15px rgba(0,0,0,.1);
+}
+.logo{font-size:22px;font-weight:800}
+.lang span{margin-left:10px;cursor:pointer;font-weight:700}
+.hero{
+  background:linear-gradient(rgba(0,80,160,.5),rgba(0,80,160,.5)),
+  url("https://images.unsplash.com/photo-1503387762-592deb58ef4e");
+  background-size:cover;
+  color:#fff;
+  text-align:center;
+  padding:90px 20px;
+}
+.hero h1{font-size:40px}
+.hero a{
+  display:inline-block;
+  margin-top:30px;
+  padding:15px 35px;
+  background:#ffd000;
+  font-weight:800;
+  border-radius:30px;
+  color:#000;
+}
+section{max-width:1200px;margin:auto;padding:70px 20px}
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+.service{
+  background:#fff;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,.1);
+  transition:.3s;
+}
+.service:hover{transform:translateY(-6px)}
+.service img{width:100%;height:180px;object-fit:cover}
+.service div{padding:18px}
+.contact{
+  background:#fff;
+  max-width:500px;
+  margin:auto;
+  padding:30px;
+  border-radius:16px;
+}
+.contact input, .contact button{
+  width:100%;
+  padding:14px;
+  margin-bottom:12px;
+}
+footer{
+  background:#002a55;
+  color:#fff;
+  text-align:center;
+  padding:25px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo" data-t="logo">Meșter la oră</div>
+  <div class="lang">
+    <span onclick="setLang('ro')">RO</span>
+    <span onclick="setLang('en')">EN</span>
+    <span onclick="setLang('ru')">RU</span>
+  </div>
+</header>
+
+<div class="hero">
+  <h1 data-t="title">Meșter la oră în București</h1>
+  <p data-t="sub">Electricitate, instalații sanitare, montaj și reparații</p>
+  <a href="#contact" data-t="cta">Contactează-ne</a>
+</div>
+
+<section>
+<h2 data-t="services">Serviciile noastre</h2>
+<div class="services">
+
+<div class="service">
+<img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789">
+<div><b data-t="e1">Electricitate</b><br><small data-t="e1t">Prize, iluminat, tablouri și altele</small></div>
+</div>
+
+<div class="service">
+<img src="https://images.unsplash.com/photo-1581579185169-1c1d6f50d56a">
+<div><b data-t="e2">Instalații sanitare</b><br><small data-t="e2t">WC, chiuvete, scurgeri și altele</small></div>
+</div>
+
+<div class="service">
+<img src="https://images.unsplash.com/photo-1588854337115-1c67d9247e4d">
+<div><b data-t="e3">Mobilă</b><br><small data-t="e3t">Asamblare, fixare și altele</small></div>
+</div>
+
+<div class="service">
+<img src="https://images.unsplash.com/photo-1590650046871-92c887180603">
+<div><b data-t="e4">Reparații</b><br><small data-t="e4t">Uși, pereți, diverse lucrări</small></div>
+</div>
+
+</div>
+</section>
+
+<section id="contact">
+<h2 data-t="contact">Contact</h2>
+<div class="contact">
+<input placeholder="Nume">
+<input placeholder="Telefon">
+<button onclick="send()" data-t="send">Trimite → WhatsApp & Telegram</button>
+</div>
+</section>
+
+<footer>© DANSHYN BUILDERS SRL • 10+ ani experiență</footer>
+
+<script>
+const t={
+ro:{
+logo:"Meșter la oră",
+title:"Meșter la oră în București",
+sub:"Electricitate, instalații sanitare, montaj și reparații",
+cta:"Contactează-ne",
+services:"Serviciile noastre",
+e1:"Electricitate", e1t:"Prize, iluminat, tablouri și altele",
+e2:"Instalații sanitare", e2t:"WC, chiuvete, scurgeri și altele",
+e3:"Mobilă", e3t:"Asamblare, fixare și altele",
+e4:"Reparații", e4t:"Uși, pereți, diverse lucrări",
+contact:"Contact",
+send:"Trimite → WhatsApp & Telegram"
+},
+en:{
+logo:"Handyman",
+title:"Handyman in Bucharest",
+sub:"Electrical, plumbing, installation and repairs",
+cta:"Contact us",
+services:"Our services",
+e1:"Electrical", e1t:"Sockets, lights and more",
+e2:"Plumbing", e2t:"Toilets, sinks and more",
+e3:"Furniture", e3t:"Assembly and fixing",
+e4:"Repairs", e4t:"Doors, walls and more",
+contact:"Contact",
+send:"Send → WhatsApp & Telegram"
+},
+ru:{
+logo:"Муж на час",
+title:"Муж на час в Бухаресте",
+sub:"Электрика, сантехника, монтаж и ремонт",
+cta:"Связаться",
+services:"Услуги",
+e1:"Электрика", e1t:"Розетки, свет и другое",
+e2:"Сантехника", e2t:"Унитазы, раковины и другое",
+e3:"Мебель", e3t:"Сборка и крепление",
+e4:"Ремонт", e4t:"Двери, стены и другое",
+contact:"Контакты",
+send:"Отправить → WhatsApp & Telegram"
+}
+}
+
+function setLang(l){
+document.querySelectorAll("[data-t]").forEach(e=>{
+e.innerText=t[l][e.dataset.t]
+})
+}
+
+function send(){
+const msg="Bună ziua! Am nevoie de un meșter."
+window.open("https://wa.me/40725135667?text="+encodeURIComponent(msg))
+window.open("https://t.me/share/url?text="+encodeURIComponent(msg))
+}
+</script>
+
+</body>
+</html>
