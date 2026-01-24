@@ -220,7 +220,49 @@ footer{
 </footer>
 
 <script>
-const services=[
+let currentLang = "ro";
+
+const translations = {
+ro:{
+  title:"Meșter la oră în București",
+  sub:"Reparații și servicii profesionale pentru locuință",
+  cta:"Contactează-ne",
+  services:"Serviciile noastre",
+  how:"Cum lucrăm",
+  h1:"Ne contactezi",
+  h2:"Venim rapid",
+  h3:"Rezolvăm problema",
+  contact:"Contact",
+  send:"Trimite → WhatsApp & Telegram"
+},
+en:{
+  title:"Handyman services in Bucharest",
+  sub:"Professional home repair and installation services",
+  cta:"Contact us",
+  services:"Our services",
+  how:"How it works",
+  h1:"You contact us",
+  h2:"We arrive quickly",
+  h3:"We fix the problem",
+  contact:"Contact",
+  send:"Send → WhatsApp & Telegram"
+},
+ru:{
+  title:"Муж на час в Бухаресте",
+  sub:"Профессиональные услуги по ремонту и установке",
+  cta:"Связаться с нами",
+  services:"Наши услуги",
+  how:"Как мы работаем",
+  h1:"Вы связываетесь с нами",
+  h2:"Мы быстро приезжаем",
+  h3:"Решаем проблему",
+  contact:"Контакты",
+  send:"Отправить → WhatsApp & Telegram"
+}
+};
+
+const services = {
+ro:[
 ["⚡","Electricitate","Prize, iluminat, tablouri electrice și altele","150","electrician electrical panel"],
 ["🚿","Instalații sanitare","WC, chiuvete, baterii și altele","180","plumber bathroom"],
 ["🪑","Mobilă","Asamblare, montaj și altele","200","furniture assembly"],
@@ -231,11 +273,45 @@ const services=[
 ["🛠","Reparații minore","Lucrări diverse și altele","120","handyman tools"],
 ["🧱","Gips-carton","Pereți, tavane și altele","250","drywall installation"],
 ["🪚","Plinte","Montaj și ajustare și altele","120","skirting board"]
-];
+],
+en:[
+["⚡","Electrical work","Sockets, lighting, panels and more","150","electrician electrical panel"],
+["🚿","Plumbing","Toilets, sinks, faucets and more","180","plumber bathroom"],
+["🪑","Furniture","Assembly, installation and more","200","furniture assembly"],
+["📺","TV mounting","Wall mounts, cables and more","180","tv wall mount"],
+["🚪","Doors","Installation, adjustment and more","200","door installation"],
+["🪟","Windows","Adjustments and repairs and more","180","window repair"],
+["💡","Lighting","Chandeliers, spotlights and more","150","ceiling lights"],
+["🛠","Minor repairs","Various small jobs and more","120","handyman tools"],
+["🧱","Drywall","Walls, ceilings and more","250","drywall installation"],
+["🪚","Skirting boards","Installation and adjustment and more","120","skirting board"]
+],
+ru:[
+["⚡","Электрика","Розетки, свет, щиты и другое","150","electrician electrical panel"],
+["🚿","Сантехника","Унитазы, раковины, смесители и другое","180","plumber bathroom"],
+["🪑","Мебель","Сборка, монтаж и другое","200","furniture assembly"],
+["📺","Монтаж ТВ","Крепления, кабели и другое","180","tv wall mount"],
+["🚪","Двери","Установка, регулировка и другое","200","door installation"],
+["🪟","Окна","Регулировка и ремонт и другое","180","window repair"],
+["💡","Освещение","Люстры, споты и другое","150","ceiling lights"],
+["🛠","Мелкий ремонт","Разные работы и другое","120","handyman tools"],
+["🧱","Гипсокартон","Стены, потолки и другое","250","drywall installation"],
+["🪚","Плинтусы","Монтаж и подгонка и другое","120","skirting board"]
+]
+};
+
+function setLang(lang){
+currentLang = lang;
+document.querySelectorAll("[data-t]").forEach(el=>{
+el.innerText = translations[lang][el.dataset.t];
+});
+renderServices();
+}
 
 function renderServices(){
 const box=document.getElementById("services");
-services.forEach(s=>{
+box.innerHTML="";
+services[currentLang].forEach(s=>{
 box.innerHTML+=`
 <div class="service fade" onclick="location.href='#contact'">
 <img src="https://images.unsplash.com/600x400/?${encodeURIComponent(s[4])}">
@@ -253,13 +329,13 @@ const obs=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.cl
 function observe(){document.querySelectorAll(".fade").forEach(el=>obs.observe(el));}
 
 function send(){
-const msg="Bună ziua! Am nevoie de un meșter.";
+const msg="Hello! I need a handyman.";
 window.open("https://wa.me/40725135667?text="+encodeURIComponent(msg));
 window.open("https://t.me/share/url?text="+encodeURIComponent(msg));
 }
 
 renderServices();
 </script>
-
 </body>
 </html>
+
