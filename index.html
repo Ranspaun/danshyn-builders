@@ -3,163 +3,171 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Meșter la oră | București</title>
+<title>Meșter la oră</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
 body{
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  margin:0;
+  font-family:Inter, Arial, sans-serif;
   background:#eef4fb;
-  color:#0f172a;
+  color:#1a1a1a;
 }
-a{text-decoration:none;color:inherit}
 
-/* HEADER */
+a{color:inherit;text-decoration:none}
+
 header{
-  background:#fff;
   position:sticky;
   top:0;
-  z-index:1000;
-  box-shadow:0 2px 8px rgba(0,0,0,.08);
+  background:#fff;
+  box-shadow:0 4px 20px rgba(0,0,0,.08);
+  z-index:100;
 }
-.nav{
+
+.header-inner{
   max-width:1200px;
   margin:auto;
-  padding:14px 20px;
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  gap:20px;
+  align-items:center;
+  padding:14px 20px;
 }
+
 .logo{
   font-size:22px;
   font-weight:800;
 }
-.header-right{
-  display:flex;
-  gap:14px;
-  align-items:center;
-  font-size:14px;
-  flex-wrap:wrap;
-}
-.header-right a{font-weight:600}
-.whatsapp{color:#25D366}
-.telegram{color:#229ED9}
 
-/* HERO */
-.hero{
-  background:
-    linear-gradient(rgba(238,244,251,.93),rgba(238,244,251,.93)),
-    url("https://images.pexels.com/photos/834892/pexels-photo-834892.jpeg?auto=compress&cs=tinysrgb&w=1600");
-  background-size:cover;
-  background-position:center;
-  padding:120px 20px;
-  text-align:center;
+.contacts{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  font-weight:600;
 }
-.hero h1{
-  font-size:44px;
-  margin-bottom:14px;
-}
-.hero p{
-  font-size:18px;
-  color:#334155;
-  margin-bottom:26px;
-}
-.cta{
-  display:inline-block;
-  background:#2563eb;
-  color:#fff;
-  padding:14px 34px;
-  border-radius:30px;
+
+.contacts a:hover{color:#0a63c9}
+
+.lang span{
+  margin-left:10px;
+  cursor:pointer;
   font-weight:700;
 }
-.cta:hover{background:#1d4ed8}
+.lang span:hover{opacity:.7}
 
-/* SECTION */
-.section{
-  max-width:1200px;
-  margin:70px auto;
-  padding:0 20px;
-}
-.section h2{
-  font-size:30px;
+.hero{
+  background:
+    linear-gradient(rgba(0,60,120,.55),rgba(0,60,120,.55)),
+    url("https://images.unsplash.com/photo-1503387762-592deb58ef4e");
+  background-size:cover;
+  background-position:center;
+  color:#fff;
+  padding:90px 20px;
   text-align:center;
-  margin-bottom:36px;
 }
 
-/* SERVICES */
-.cards{
+.hero h1{font-size:42px;margin-bottom:10px}
+.hero p{font-size:18px;max-width:700px;margin:0 auto}
+
+.hero .btn{
+  display:inline-block;
+  margin-top:30px;
+  background:#ffd000;
+  color:#000;
+  padding:15px 36px;
+  font-weight:800;
+  border-radius:30px;
+}
+
+section{
+  max-width:1200px;
+  margin:auto;
+  padding:70px 20px;
+}
+
+h2{text-align:center;margin-bottom:40px}
+
+.services{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:26px;
 }
-.card{
+
+.service{
   background:#fff;
   border-radius:18px;
-  box-shadow:0 6px 22px rgba(0,0,0,.08);
   overflow:hidden;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+  transition:.35s;
   cursor:pointer;
-  transition:.3s;
+  animation:fadeUp .6s ease both;
 }
-.card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 14px 30px rgba(0,0,0,.14);
+
+.service:hover{
+  transform:translateY(-6px) scale(1.02);
+  box-shadow:0 20px 45px rgba(0,0,0,.15);
 }
-.card img{
+
+.service img{
   width:100%;
   height:180px;
   object-fit:cover;
+  display:block;
 }
-.card-body{
-  padding:18px;
-}
-.card-body h3{
-  font-size:20px;
-  color:#2563eb;
-  margin-bottom:8px;
-}
-.card-body p{
-  font-size:15px;
-  color:#475569;
-  margin-bottom:10px;
-}
-.price{font-weight:800}
 
-/* CONTACT */
+.service div{padding:18px}
+.price{font-weight:800;margin-top:6px}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:none}
+}
+
 .contact{
   background:#fff;
-  border-radius:20px;
-  box-shadow:0 6px 24px rgba(0,0,0,.08);
-  padding:36px;
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+  max-width:520px;
+  margin:auto;
 }
-.contact-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
-}
-.contact-form input,
-.contact-form button{
+
+.contact input{
   width:100%;
   padding:14px;
-  border-radius:10px;
-  font-size:15px;
-  border:1px solid #cbd5e1;
-  margin-bottom:14px;
+  margin-bottom:12px;
 }
-.contact-form button{
-  background:#2563eb;
+
+.contact button{
+  width:100%;
+  padding:15px;
+  background:#0a63c9;
   color:#fff;
-  font-weight:700;
   border:none;
+  font-size:16px;
+  font-weight:700;
   cursor:pointer;
 }
-.contact-form button:hover{background:#1d4ed8}
 
 footer{
+  background:#002a55;
+  color:#fff;
   text-align:center;
-  padding:16px;
-  font-size:14px;
-  color:#64748b;
+  padding:30px;
+}
+
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  align-items:center;
+  justify-content:center;
+}
+.modal-content{
+  background:#fff;
+  padding:30px;
+  max-width:420px;
+  border-radius:16px;
 }
 </style>
 </head>
@@ -167,100 +175,126 @@ footer{
 <body>
 
 <header>
-  <div class="nav">
-    <div class="logo">Meșter la oră</div>
-    <div class="header-right">
+  <div class="header-inner">
+    <div class="logo" data-t="logo">Meșter la oră</div>
+
+    <div class="contacts">
       <a href="tel:+40725135667">📞 +40 725 135 667</a>
-      <a href="tel:+40758969693">+40 758 969 693</a>
-      <a class="whatsapp" href="https://wa.me/40725135667" target="_blank">WhatsApp</a>
-      <a class="telegram" href="https://t.me/" target="_blank">Telegram</a>
+      <a href="tel:+40700000000">📞 +40 700 000 000</a>
+    </div>
+
+    <div class="lang">
+      <span onclick="setLang('ro')">RO</span>
+      <span onclick="setLang('en')">EN</span>
+      <span onclick="setLang('ru')">RU</span>
     </div>
   </div>
 </header>
 
-<section class="hero">
-  <h1>Meșter la oră</h1>
-  <p>Electricitate, instalații sanitare, reparații și construcții. Experiență 10+ ani.</p>
-  <a href="#contact" class="cta">Contactează-ne acum</a>
+<div class="hero">
+  <h1 data-t="heroTitle">Meșter la oră în București</h1>
+  <p data-t="heroText">Electricitate, instalații sanitare, montaj și reparații pentru locuința ta.</p>
+  <a href="#contact" class="btn" data-t="cta">Contactează-ne</a>
+</div>
+
+<section>
+<h2 data-t="servicesTitle">Serviciile noastre</h2>
+
+<div class="services">
+
+<div class="service">
+<img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789">
+<div>
+<h3 data-t="s1">Electricitate</h3>
+<p data-t="s1t">Prize, iluminat, tablouri electrice și altele.</p>
+<div class="price">de la 150 RON</div>
+</div>
+</div>
+
+<div class="service">
+<img src="https://images.unsplash.com/photo-1581579185169-1c1d6f50d56a">
+<div>
+<h3 data-t="s2">Instalații sanitare</h3>
+<p data-t="s2t">Chiuvete, WC, scurgeri și altele.</p>
+<div class="price">de la 180 RON</div>
+</div>
+</div>
+
+<div class="service">
+<img src="https://images.unsplash.com/photo-1588854337115-1c67d9247e4d">
+<div>
+<h3 data-t="s3">Mobilă & asamblare</h3>
+<p data-t="s3t">Asamblare, fixare și altele.</p>
+<div class="price">de la 120 RON</div>
+</div>
+</div>
+
+</div>
 </section>
 
-<section class="section">
-  <h2>Serviciile noastre</h2>
-  <div class="cards">
-
-    <div class="card" onclick="location.href='#contact'">
-      <img src="https://images.pexels.com/photos/4792509/pexels-photo-4792509.jpeg">
-      <div class="card-body">
-        <h3>Instalații sanitare</h3>
-        <p>WC, chiuvete, baterii, țevi, scurgeri, racordări și altele.</p>
-        <div class="price">De la 150 RON</div>
-      </div>
-    </div>
-
-    <div class="card" onclick="location.href='#contact'">
-      <img src="electric.jpg">
-      <div class="card-body">
-        <h3>Electricitate</h3>
-        <p>Prize, întrerupătoare, tablouri electrice, iluminat, reparații și altele.</p>
-        <div class="price">De la 150 RON</div>
-      </div>
-    </div>
-
-    <div class="card" onclick="location.href='#contact'">
-      <img src="https://images.pexels.com/photos/159306/pexels-photo-159306.jpeg">
-      <div class="card-body">
-        <h3>Reparații / construcții</h3>
-        <p>Gips-carton, zugrăveli, finisaje, demolări și altele.</p>
-        <div class="price">De la 200 RON</div>
-      </div>
-    </div>
-
-    <div class="card" onclick="location.href='#contact'">
-      <img src="https://images.pexels.com/photos/534228/pexels-photo-534228.jpeg">
-      <div class="card-body">
-        <h3>Mobilă</h3>
-        <p>Asamblare, montaj mobilier, bucătării și altele.</p>
-        <div class="price">De la 120 RON</div>
-      </div>
-    </div>
-
-  </div>
+<section id="contact">
+<h2 data-t="contactTitle">Contact</h2>
+<div class="contact">
+<input id="name" placeholder="Nume">
+<input id="phone" placeholder="Telefon">
+<button onclick="send()" data-t="send">Trimite cererea</button>
+</div>
 </section>
 
-<section id="contact" class="section">
-  <div class="contact">
-    <h2>Contact</h2>
-    <div class="contact-grid">
-      <div>
-        <p><strong>DANSHYN BUILDERS SRL</strong></p>
-        <p>📍 București</p>
-        <p>🕘 09:00 – 18:00</p>
-        <p>📞 +40 725 135 667</p>
-        <p>📞 +40 758 969 693</p>
-      </div>
-
-      <div class="contact-form">
-        <input type="text" id="name" placeholder="Nume">
-        <input type="tel" id="phone" placeholder="Telefon">
-        <button onclick="sendWhatsApp()">Trimite cererea</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  © 2026 DANSHYN BUILDERS SRL
-</footer>
+<footer>© DANSHYN BUILDERS SRL • București • 10+ ani experiență</footer>
 
 <script>
-function sendWhatsApp(){
-  const name = document.getElementById('name').value;
-  const phone = document.getElementById('phone').value;
-  const text =
-    "Cerere nouă:%0A" +
-    "Nume: " + name + "%0A" +
-    "Telefon: " + phone;
-  window.open("https://wa.me/40725135667?text=" + text, "_blank");
+const t={
+ro:{
+logo:"Meșter la oră",
+heroTitle:"Meșter la oră în București",
+heroText:"Electricitate, instalații sanitare, montaj și reparații pentru locuința ta.",
+cta:"Contactează-ne",
+servicesTitle:"Serviciile noastre",
+s1:"Electricitate", s1t:"Prize, iluminat, tablouri electrice și altele.",
+s2:"Instalații sanitare", s2t:"Chiuvete, WC, scurgeri și altele.",
+s3:"Mobilă & asamblare", s3t:"Asamblare, fixare și altele.",
+contactTitle:"Contact",
+send:"Trimite cererea"
+},
+en:{
+logo:"Handyman",
+heroTitle:"Handyman services in Bucharest",
+heroText:"Electrical, plumbing, installation and home repairs.",
+cta:"Contact us",
+servicesTitle:"Our services",
+s1:"Electrical", s1t:"Sockets, lighting, panels and more.",
+s2:"Plumbing", s2t:"Sinks, toilets, leaks and more.",
+s3:"Furniture assembly", s3t:"Assembly, fixing and more.",
+contactTitle:"Contact",
+send:"Send request"
+},
+ru:{
+logo:"Муж на час",
+heroTitle:"Муж на час в Бухаресте",
+heroText:"Электрика, сантехника, монтаж и ремонт.",
+cta:"Связаться",
+servicesTitle:"Наши услуги",
+s1:"Электрика", s1t:"Розетки, свет, щиты и другое.",
+s2:"Сантехника", s2t:"Раковины, унитазы, протечки и другое.",
+s3:"Сборка мебели", s3t:"Сборка, крепление и другое.",
+contactTitle:"Контакты",
+send:"Отправить заявку"
+}
+}
+
+function setLang(l){
+document.querySelectorAll("[data-t]").forEach(e=>{
+e.innerText=t[l][e.dataset.t]
+})
+}
+
+function send(){
+const n=document.getElementById("name").value
+const p=document.getElementById("phone").value
+const msg=`Cerere: ${n}, ${p}`
+window.open(`https://wa.me/40725135667?text=${encodeURIComponent(msg)}`)
+window.open(`https://t.me/share/url?text=${encodeURIComponent(msg)}`)
 }
 </script>
 
