@@ -47,7 +47,7 @@ header{
 .hero{
   background:
     linear-gradient(rgba(30,64,175,.55),rgba(30,64,175,.55)),
-    url("https://images.unsplash.com/photo-1503387762-592deb58ef4e");
+    url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80");
   background-size:cover;
   background-position:center;
   color:#fff;
@@ -79,57 +79,24 @@ h2{text-align:center;margin-bottom:40px}
 .services{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:28px;
+  gap:26px;
 }
 .service{
-  position:relative;
   background:#fff;
-  border-radius:22px;
+  border-radius:20px;
   overflow:hidden;
-  box-shadow:0 12px 30px rgba(0,0,0,.10);
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
   cursor:pointer;
-  transition:.35s ease;
-  display:flex;
-  flex-direction:column;
-  min-height:360px;
+  transition:.3s;
 }
-.service:hover{
-  transform:translateY(-8px) scale(1.03);
-  box-shadow:0 30px 60px rgba(0,0,0,.18);
-}
+.service:hover{transform:translateY(-6px)}
 .service img{
   width:100%;
   height:180px;
   object-fit:cover;
 }
-.icon{
-  position:absolute;
-  top:14px;
-  left:14px;
-  background:#2563eb;
-  color:#fff;
-  width:44px;
-  height:44px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  font-size:20px;
-  box-shadow:0 6px 16px rgba(0,0,0,.25);
-}
-.content{
-  padding:18px;
-  display:flex;
-  flex-direction:column;
-  flex:1;
-}
-.content b{font-size:18px}
-.price{
-  margin-top:auto;
-  font-weight:900;
-  color:#2563eb;
-  font-size:16px;
-}
+.content{padding:18px}
+.price{font-weight:800;color:#2563eb}
 
 /* CONTACT */
 .contact{
@@ -202,6 +169,18 @@ footer{
 <footer id="footer"></footer>
 
 <script>
+const images={
+electric:"photo-1581091870627-3e2f1f9c1b57",
+plumbing:"photo-1600585154340-be6161a56a0c",
+furniture:"photo-1586023492125-27b2c045efd7",
+tv:"photo-1593784991095-a205069470b6",
+door:"photo-1560185127-6ed189bf02f4",
+window:"photo-1560184897-502a15fdf9c4",
+light:"photo-1509395176047-4a66953fd231",
+drywall:"photo-1589939705384-5185137a7f0f",
+repair:"photo-1581579185169-1c3cba83a6a5"
+};
+
 const data={
 ro:{
 hero_title:"Meșter la oră în București",
@@ -214,34 +193,20 @@ footer:"© DANSHYN BUILDERS SRL • București • 10+ ani experiență",
 name:"Nume",
 phone:"Telefon",
 services:[
-["⚡","Electricitate","Prize, întrerupătoare, tablouri electrice și altele","150","electrician electrical panel"],
-["🚿","Instalații sanitare","WC, chiuvete, baterii, scurgeri și altele","180","plumber bathroom"],
-["🪑","Mobilă","Asamblare, montaj, reglaje și altele","200","furniture assembly"],
-["📺","Montaj TV","Suporturi TV, cabluri, mascări și altele","180","tv wall mount"],
-["🚪","Uși","Montaj, reglaj, balamale și altele","200","door installation"],
-["🪟","Ferestre","Reglaje, etanșare, mânere și altele","180","window repair"],
-["💡","Iluminat","Lustre, spoturi, benzi LED și altele","150","ceiling lights"],
-["🧱","Gips-carton","Pereți, tavane, nișe și altele","250","drywall installation"],
-["🪚","Plinte","Montaj, tăiere, ajustare și altele","120","skirting board"],
-["🛠","Reparații diverse","Lucrări mici prin casă și altele","120","handyman tools"],
-
-["🚽","Montaj WC","Vas WC, rezervor, etanșare și altele","180","toilet installation"],
-["🚰","Baterii","Montaj baterii bucătărie / baie și altele","120","faucet installation"],
-["🧼","Chiuvete","Montaj, sifon, etanșare și altele","160","sink installation"],
-["🧯","Hote","Montaj hotă, conexiuni și altele","200","kitchen hood installation"],
-["🔥","Plite","Montaj plite electrice și altele","200","electric cooktop installation"],
-["🧺","Mașină de spălat","Conectare, scurgere, testare și altele","180","washing machine installation"],
-["🧊","Mașină de spălat vase","Montaj, conectare și altele","200","dishwasher installation"],
-["🖼","Rafturi & tablouri","Montaj rafturi, tablouri și altele","120","shelf wall mounting"],
-["🚿","Cabine duș","Montaj cabină, etanșare și altele","250","shower cabin installation"],
-["🧰","Silicon & etanșări","Baie, bucătărie, ferestre și altele","120","silicone sealing"],
-["🪛","Reglaje uși & mobilier","Balamale, glisiere și altele","120","hinge adjustment"],
-["🏠","Lucrări generale","Întreținere locuință și altele","150","home maintenance handyman"]
+["Electricitate","Prize, iluminat, tablouri electrice și altele","150","electric"],
+["Instalații sanitare","WC, chiuvete, baterii și altele","180","plumbing"],
+["Mobilă","Asamblare, montaj și altele","200","furniture"],
+["Montaj TV","Suporturi, cabluri și altele","180","tv"],
+["Uși","Montaj și reglaj și altele","200","door"],
+["Ferestre","Reglaje și reparații și altele","180","window"],
+["Iluminat","Lustre, spoturi și altele","150","light"],
+["Gips-carton","Pereți, tavane și altele","250","drywall"],
+["Reparații diverse","Lucrări mici și altele","120","repair"]
 ]
 },
 en:{
 hero_title:"Handyman services in Bucharest",
-hero_sub:"Professional repair and home services",
+hero_sub:"Professional home repair and maintenance",
 cta:"Contact us",
 services_title:"Our services",
 contact_title:"Contact",
@@ -250,22 +215,21 @@ footer:"© DANSHYN BUILDERS SRL • Bucharest • 10+ years experience",
 name:"Name",
 phone:"Phone",
 services:[
-["⚡","Electrical","Sockets, lighting, panels and more","150","electrician electrical panel"],
-["🚿","Plumbing","Toilets, sinks, taps and more","180","plumber bathroom"],
-["🪑","Furniture","Assembly, installation and more","200","furniture assembly"],
-["📺","TV mounting","Brackets, cables and more","180","tv wall mount"],
-["🚪","Doors","Installation and adjustment and more","200","door installation"],
-["🪟","Windows","Adjustments and repairs and more","180","window repair"],
-["💡","Lighting","Chandeliers, spotlights and more","150","ceiling lights"],
-["🧱","Drywall","Walls, ceilings and more","250","drywall installation"],
-["🪚","Skirting boards","Installation and more","120","skirting board"],
-["🛠","General repairs","Small jobs and more","120","handyman tools"]
+["Electrical","Sockets, lighting, panels and more","150","electric"],
+["Plumbing","Toilets, sinks, taps and more","180","plumbing"],
+["Furniture","Assembly, installation and more","200","furniture"],
+["TV mounting","Brackets, cables and more","180","tv"],
+["Doors","Installation and adjustment and more","200","door"],
+["Windows","Repairs and adjustments and more","180","window"],
+["Lighting","Chandeliers, spotlights and more","150","light"],
+["Drywall","Walls, ceilings and more","250","drywall"],
+["General repairs","Small jobs and more","120","repair"]
 ]
 },
 ru:{
 hero_title:"Муж на час в Бухаресте",
-hero_sub:"Профессиональные услуги и ремонт для дома",
-cta:"Связаться с нами",
+hero_sub:"Профессиональный ремонт и услуги для дома",
+cta:"Связаться",
 services_title:"Наши услуги",
 contact_title:"Контакты",
 send:"Отправить → WhatsApp & Telegram",
@@ -273,16 +237,15 @@ footer:"© DANSHYN BUILDERS SRL • Бухарест • Опыт 10+ лет",
 name:"Имя",
 phone:"Телефон",
 services:[
-["⚡","Электрика","Розетки, освещение, щиты и другое","150","electrician electrical panel"],
-["🚿","Сантехника","Унитазы, раковины, смесители и другое","180","plumber bathroom"],
-["🪑","Мебель","Сборка, монтаж и другое","200","furniture assembly"],
-["📺","Монтаж ТВ","Крепления, кабели и другое","180","tv wall mount"],
-["🚪","Двери","Монтаж и регулировка и другое","200","door installation"],
-["🪟","Окна","Регулировка и ремонт и другое","180","window repair"],
-["💡","Освещение","Люстры, светильники и другое","150","ceiling lights"],
-["🧱","Гипсокартон","Стены, потолки и другое","250","drywall installation"],
-["🪚","Плинтусы","Монтаж и другое","120","skirting board"],
-["🛠","Мелкий ремонт","Разные работы и другое","120","handyman tools"]
+["Электрика","Розетки, освещение, щиты и другое","150","electric"],
+["Сантехника","Унитазы, раковины, смесители и другое","180","plumbing"],
+["Мебель","Сборка, монтаж и другое","200","furniture"],
+["Монтаж ТВ","Крепления, кабели и другое","180","tv"],
+["Двери","Монтаж и регулировка и другое","200","door"],
+["Окна","Ремонт и регулировка и другое","180","window"],
+["Освещение","Люстры, светильники и другое","150","light"],
+["Гипсокартон","Стены, потолки и другое","250","drywall"],
+["Мелкий ремонт","Разные работы и другое","120","repair"]
 ]
 }
 };
@@ -305,11 +268,10 @@ services.innerHTML="";
 t.services.forEach(s=>{
 services.innerHTML+=`
 <div class="service" onclick="location.href='#contact'">
-<img src="https://source.unsplash.com/600x400/?${encodeURIComponent(s[4])}">
-<div class="icon">${s[0]}</div>
+<img src="https://images.unsplash.com/${images[s[3]]}?auto=format&fit=crop&w=800&q=80">
 <div class="content">
-<b>${s[1]}</b><br>${s[2]}
-<span class="price">de la ${s[3]} RON</span>
+<b>${s[0]}</b><br>${s[1]}<br>
+<span class="price">de la ${s[2]} RON</span>
 </div>
 </div>`;
 });
@@ -335,4 +297,3 @@ render();
 
 </body>
 </html>
-
