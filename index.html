@@ -18,9 +18,7 @@ body{
 
 /* HEADER */
 header{
-  position:sticky;
-  top:0;
-  z-index:1000;
+  position:sticky;top:0;z-index:1000;
   background:#fff;
   padding:16px 28px;
   display:flex;
@@ -47,7 +45,7 @@ header{
 .hero{
   background:
     linear-gradient(rgba(30,64,175,.55),rgba(30,64,175,.55)),
-    url("https://images.unsplash.com/photo-1503387762-592deb58ef4e");
+    url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80");
   background-size:cover;
   background-position:center;
   color:#fff;
@@ -82,6 +80,7 @@ h2{text-align:center;margin-bottom:40px}
   gap:26px;
 }
 .service{
+  position:relative;
   background:#fff;
   border-radius:20px;
   overflow:hidden;
@@ -98,10 +97,36 @@ h2{text-align:center;margin-bottom:40px}
   height:180px;
   object-fit:cover;
 }
+
+/* gallery ONLY for drywall */
+.gallery{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+.gallery img{
+  height:180px;
+}
+
+.svg-icon{
+  position:absolute;
+  top:14px;
+  left:14px;
+  width:42px;
+  height:42px;
+  background:#2563eb;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.svg-icon svg{
+  width:22px;height:22px;fill:#fff;
+}
+
 .content{padding:18px}
 .price{font-weight:800;color:#2563eb}
 
-/* BOOKING */
+/* CONTACT */
 .contact{
   background:#fff;
   max-width:520px;
@@ -110,9 +135,7 @@ h2{text-align:center;margin-bottom:40px}
   border-radius:20px;
   box-shadow:0 15px 40px rgba(0,0,0,.1);
 }
-.contact input,
-.contact select,
-.contact button{
+.contact input,.contact button{
   width:100%;
   padding:15px;
   margin-bottom:14px;
@@ -178,20 +201,17 @@ footer{
 </div>
 
 <section>
-<h2 id="services_title"></h2>
-<div class="services" id="services"></div>
+  <h2 id="services_title"></h2>
+  <div class="services" id="services"></div>
 </section>
 
 <section id="contact">
-<h2 id="contact_title"></h2>
-<div class="contact">
-  <select id="service_select"></select>
-  <input type="date" id="date">
-  <input type="time" id="time">
-  <input id="name">
-  <input id="phone">
-  <button onclick="sendBooking()" id="send_btn"></button>
-</div>
+  <h2 id="contact_title"></h2>
+  <div class="contact">
+    <input id="name">
+    <input id="phone">
+    <button onclick="send()" id="send_btn"></button>
+  </div>
 </section>
 
 <footer id="footer"></footer>
@@ -200,23 +220,21 @@ footer{
 
 <script>
 const IMAGES={
-electric: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=900&q=80",
-  plumbing: "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=900&q=80",
-  furniture: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80",
-  tv: "https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=900&q=80",
-  door: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80",
-  window: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=900&q=80",
-  lighting: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=900&q=80",
-
-  /* ✅ ИСПРАВЛЕНО */
-   drywall: [
-    "https://images.unsplash.com/photo-1604014238170-4def1e4e1c3b?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1581091012184-7c54c8cdd7b7?auto=format&fit=crop&w=900&q=80"
-  ],
-  repair: "https://images.unsplash.com/photo-1581141849291-1125c7b692b5?auto=format&fit=crop&w=900&q=80",
-
-  skirting: "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=900&q=80"
+electric:"https://images.unsplash.com/photo-1581091870627-3c4c3d2c2b12?auto=format&fit=crop&w=900&q=80",
+plumbing:"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80",
+furniture:"https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80",
+tv:"https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=900&q=80",
+door:"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80",
+window:"https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80",
+lighting:"https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=900&q=80",
+skirting:"https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=900&q=80",
+repair:"https://images.unsplash.com/photo-1581579186913-45ac2b68c7e9?auto=format&fit=crop&w=900&q=80"
 };
+
+const drywallImages=[
+"https://images.unsplash.com/photo-1604014238170-4def1e4e1c3b?auto=format&fit=crop&w=900&q=80",
+"https://images.unsplash.com/photo-1581091012184-7c54c8cdd7b7?auto=format&fit=crop&w=900&q=80"
+];
 
 const data={
 ro:{
@@ -224,7 +242,7 @@ hero_title:"Meșter la oră în București",
 hero_sub:"Reparații și servicii profesionale pentru locuință",
 cta:"Contactează-ne",
 services_title:"Serviciile noastre",
-contact_title:"Programare online",
+contact_title:"Contact",
 send:"Trimite → WhatsApp & Telegram",
 footer:"© DANSHYN BUILDERS SRL • București • 10+ ani experiență",
 name:"Nume",
@@ -240,52 +258,6 @@ services:[
 ["Gips-carton","Pereți, tavane și altele","250","drywall"],
 ["Plinte","Montaj și ajustare și altele","120","skirting"],
 ["Reparații diverse","Lucrări mici și altele","120","repair"]
-]
-},
-en:{
-hero_title:"Handyman services in Bucharest",
-hero_sub:"Professional home repair services",
-cta:"Contact us",
-services_title:"Our services",
-contact_title:"Online booking",
-send:"Send → WhatsApp & Telegram",
-footer:"© DANSHYN BUILDERS SRL • Bucharest • 10+ years experience",
-name:"Name",
-phone:"Phone",
-services:[
-["Electrical","Sockets, lighting, panels and more","150","electric"],
-["Plumbing","Toilets, sinks, taps and more","180","plumbing"],
-["Furniture","Assembly and installation and more","200","furniture"],
-["TV mounting","Brackets and cables and more","180","tv"],
-["Doors","Installation and adjustment and more","200","door"],
-["Windows","Repairs and adjustments and more","180","window"],
-["Lighting","Chandeliers and spotlights and more","150","lighting"],
-["Drywall","Walls and ceilings and more","250","drywall"],
-["Skirting boards","Installation and more","120","skirting"],
-["General repairs","Small jobs and more","120","repair"]
-]
-},
-ru:{
-hero_title:"Муж на час в Бухаресте",
-hero_sub:"Профессиональный ремонт и услуги для дома",
-cta:"Связаться с нами",
-services_title:"Наши услуги",
-contact_title:"Онлайн-запись",
-send:"Отправить → WhatsApp & Telegram",
-footer:"© DANSHYN BUILDERS SRL • Бухарест • Опыт 10+ лет",
-name:"Имя",
-phone:"Телефон",
-services:[
-["Электрика","Розетки, освещение, щиты и другое","150","electric"],
-["Сантехника","Унитазы, раковины, смесители и другое","180","plumbing"],
-["Мебель","Сборка, монтаж и другое","200","furniture"],
-["Монтаж ТВ","Крепления и кабели и другое","180","tv"],
-["Двери","Монтаж и регулировка и другое","200","door"],
-["Окна","Ремонт и регулировка и другое","180","window"],
-["Освещение","Люстры и светильники и другое","150","lighting"],
-["Гипсокартон","Стены и потолки и другое","250","drywall"],
-["Плинтусы","Монтаж и другое","120","skirting"],
-["Мелкий ремонт","Разные работы и другое","120","repair"]
 ]
 }
 };
@@ -305,37 +277,35 @@ name.placeholder=t.name;
 phone.placeholder=t.phone;
 
 services.innerHTML="";
-service_select.innerHTML="";
 
 t.services.forEach(s=>{
+let imgBlock="";
+
+if(s[3]==="drywall"){
+  imgBlock=`<div class="gallery">
+    <img src="${drywallImages[0]}">
+    <img src="${drywallImages[1]}">
+  </div>`;
+}else{
+  imgBlock=`<img src="${IMAGES[s[3]]}">`;
+}
+
 services.innerHTML+=`
 <div class="service" onclick="location.href='#contact'">
-<img src="${IMAGES[s[3]]}">
+${imgBlock}
+<div class="svg-icon">
+<svg viewBox="0 0 24 24"><path d="M3 12h18"/></svg>
+</div>
 <div class="content">
 <b>${s[0]}</b><br>${s[1]}<br>
 <span class="price">de la ${s[2]} RON</span>
 </div>
 </div>`;
-service_select.innerHTML+=`<option value="${s[0]}">${s[0]}</option>`;
 });
 }
 
-document.querySelectorAll(".lang span").forEach(el=>{
-el.onclick=()=>{
-document.querySelectorAll(".lang span").forEach(s=>s.classList.remove("active"));
-el.classList.add("active");
-lang=el.dataset.lang;
-render();
-};
-});
-
-function sendBooking(){
-const msg=`📅 Programare online
-Serviciu: ${service_select.value}
-Data: ${date.value}
-Ora: ${time.value}
-Nume: ${name.value}
-Telefon: ${phone.value}`;
+function send(){
+const msg="Bună ziua! Am nevoie de un meșter.";
 window.open("https://wa.me/40725135667?text="+encodeURIComponent(msg));
 window.open("https://t.me/share/url?text="+encodeURIComponent(msg));
 }
@@ -345,12 +315,3 @@ render();
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
