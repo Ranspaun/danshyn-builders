@@ -39,7 +39,7 @@ header{
   margin-left:10px;
   cursor:pointer;
   font-weight:800;
-  opacity:.5;
+  opacity:.4;
 }
 .lang span.active{opacity:1}
 
@@ -169,19 +169,19 @@ footer{
 <footer id="footer"></footer>
 
 <script>
-const IMAGES = {
-  electric: "https://images.unsplash.com/photo-1581092334394-7a6f1d7b2a2c?auto=format&fit=crop&w=800&q=80",
-  plumbing: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
-  furniture: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80",
-  tv: "https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=800&q=80",
-  door: "https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=800&q=80",
-  window: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80",
-  light: "https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=800&q=80",
-  drywall: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80",
-  repair: "https://images.unsplash.com/photo-1581579185169-1c3cba83a6a5?auto=format&fit=crop&w=800&q=80"
+const IMAGES={
+electric:"https://images.unsplash.com/photo-1581092334394-7a6f1d7b2a2c?auto=format&fit=crop&w=800&q=80",
+plumbing:"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+furniture:"https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80",
+tv:"https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=800&q=80",
+door:"https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=800&q=80",
+window:"https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80",
+light:"https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=800&q=80",
+drywall:"https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80",
+repair:"https://images.unsplash.com/photo-1581579185169-1c3cba83a6a5?auto=format&fit=crop&w=800&q=80"
 };
 
-const data = {
+const data={
 ro:{
 hero_title:"Meșter la oră în București",
 hero_sub:"Reparații și servicii profesionale pentru locuință",
@@ -190,8 +190,7 @@ services_title:"Serviciile noastre",
 contact_title:"Contact",
 send:"Trimite → WhatsApp & Telegram",
 footer:"© DANSHYN BUILDERS SRL • București • 10+ ani experiență",
-name:"Nume",
-phone:"Telefon",
+name:"Nume", phone:"Telefon",
 services:[
 ["Electricitate","Prize, iluminat, tablouri electrice și altele","150","electric"],
 ["Instalații sanitare","WC, chiuvete, baterii și altele","180","plumbing"],
@@ -202,6 +201,48 @@ services:[
 ["Iluminat","Lustre, spoturi și altele","150","light"],
 ["Gips-carton","Pereți, tavane și altele","250","drywall"],
 ["Reparații diverse","Lucrări mici și altele","120","repair"]
+]
+},
+en:{
+hero_title:"Handyman services in Bucharest",
+hero_sub:"Professional repair and home services",
+cta:"Contact us",
+services_title:"Our services",
+contact_title:"Contact",
+send:"Send → WhatsApp & Telegram",
+footer:"© DANSHYN BUILDERS SRL • Bucharest • 10+ years experience",
+name:"Name", phone:"Phone",
+services:[
+["Electrical","Sockets, lighting, panels and more","150","electric"],
+["Plumbing","Toilets, sinks, taps and more","180","plumbing"],
+["Furniture","Assembly and installation and more","200","furniture"],
+["TV mounting","Brackets, cables and more","180","tv"],
+["Doors","Installation and adjustment and more","200","door"],
+["Windows","Adjustments and repairs and more","180","window"],
+["Lighting","Chandeliers, spotlights and more","150","light"],
+["Drywall","Walls, ceilings and more","250","drywall"],
+["General repairs","Small jobs and more","120","repair"]
+]
+},
+ru:{
+hero_title:"Муж на час в Бухаресте",
+hero_sub:"Профессиональные услуги для дома",
+cta:"Связаться с нами",
+services_title:"Наши услуги",
+contact_title:"Контакты",
+send:"Отправить → WhatsApp & Telegram",
+footer:"© DANSHYN BUILDERS SRL • Бухарест • Опыт 10+ лет",
+name:"Имя", phone:"Телефон",
+services:[
+["Электрика","Розетки, освещение, щиты и другое","150","electric"],
+["Сантехника","Унитазы, раковины, смесители и другое","180","plumbing"],
+["Мебель","Сборка и монтаж и другое","200","furniture"],
+["Монтаж ТВ","Крепления и кабели и другое","180","tv"],
+["Двери","Монтаж и регулировка и другое","200","door"],
+["Окна","Регулировка и ремонт и другое","180","window"],
+["Освещение","Люстры и светильники и другое","150","light"],
+["Гипсокартон","Стены и потолки и другое","250","drywall"],
+["Мелкий ремонт","Разные работы и другое","120","repair"]
 ]
 }
 };
