@@ -79,25 +79,57 @@ h2{text-align:center;margin-bottom:40px}
 .services{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:26px;
+  gap:28px;
 }
 .service{
   position:relative;
   background:#fff;
-  border-radius:20px;
+  border-radius:22px;
   overflow:hidden;
-  box-shadow:0 12px 30px rgba(0,0,0,.08);
+  box-shadow:0 12px 30px rgba(0,0,0,.10);
   cursor:pointer;
-  transition:.3s;
+  transition:.35s ease;
+  display:flex;
+  flex-direction:column;
+  min-height:360px;
 }
-.service:hover{transform:translateY(-6px)}
+.service:hover{
+  transform:translateY(-8px) scale(1.03);
+  box-shadow:0 30px 60px rgba(0,0,0,.18);
+}
 .service img{
   width:100%;
   height:180px;
   object-fit:cover;
 }
-.content{padding:18px}
-.price{font-weight:800;color:#2563eb}
+.icon{
+  position:absolute;
+  top:14px;
+  left:14px;
+  background:#2563eb;
+  color:#fff;
+  width:44px;
+  height:44px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  font-size:20px;
+  box-shadow:0 6px 16px rgba(0,0,0,.25);
+}
+.content{
+  padding:18px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+.content b{font-size:18px}
+.price{
+  margin-top:auto;
+  font-weight:900;
+  color:#2563eb;
+  font-size:16px;
+}
 
 /* CONTACT */
 .contact{
@@ -182,16 +214,16 @@ footer:"© DANSHYN BUILDERS SRL • București • 10+ ani experiență",
 name:"Nume",
 phone:"Telefon",
 services:[
-["Electricitate","Prize, iluminat, tablouri electrice și altele","150","electrician electrical panel"],
-["Instalații sanitare","WC, chiuvete, baterii și altele","180","plumber bathroom"],
-["Mobilă","Asamblare, montaj și altele","200","furniture assembly"],
-["Montaj TV","Suporturi, cabluri și altele","180","tv wall mount"],
-["Uși","Montaj și reglaj și altele","200","door installation"],
-["Ferestre","Reglaje și reparații și altele","180","window repair"],
-["Iluminat","Lustre, spoturi și altele","150","ceiling lights"],
-["Gips-carton","Pereți, tavane și altele","250","drywall installation"],
-["Plinte","Montaj și ajustare și altele","120","skirting board"],
-["Reparații diverse","Lucrări mici și altele","120","handyman tools"]
+["⚡","Electricitate","Prize, iluminat, tablouri electrice și altele","150","electrician electrical panel"],
+["🚿","Instalații sanitare","WC, chiuvete, baterii și altele","180","plumber bathroom"],
+["🪑","Mobilă","Asamblare, montaj și altele","200","furniture assembly"],
+["📺","Montaj TV","Suporturi, cabluri și altele","180","tv wall mount"],
+["🚪","Uși","Montaj și reglaj și altele","200","door installation"],
+["🪟","Ferestre","Reglaje și reparații și altele","180","window repair"],
+["💡","Iluminat","Lustre, spoturi și altele","150","ceiling lights"],
+["🧱","Gips-carton","Pereți, tavane și altele","250","drywall installation"],
+["🪚","Plinte","Montaj și ajustare și altele","120","skirting board"],
+["🛠","Reparații diverse","Lucrări mici și altele","120","handyman tools"]
 ]
 },
 en:{
@@ -205,16 +237,16 @@ footer:"© DANSHYN BUILDERS SRL • Bucharest • 10+ years experience",
 name:"Name",
 phone:"Phone",
 services:[
-["Electrical","Sockets, lighting, panels and more","150","electrician electrical panel"],
-["Plumbing","Toilets, sinks, taps and more","180","plumber bathroom"],
-["Furniture","Assembly, installation and more","200","furniture assembly"],
-["TV mounting","Brackets, cables and more","180","tv wall mount"],
-["Doors","Installation and adjustment and more","200","door installation"],
-["Windows","Adjustments and repairs and more","180","window repair"],
-["Lighting","Chandeliers, spotlights and more","150","ceiling lights"],
-["Drywall","Walls, ceilings and more","250","drywall installation"],
-["Skirting boards","Installation and more","120","skirting board"],
-["General repairs","Small jobs and more","120","handyman tools"]
+["⚡","Electrical","Sockets, lighting, panels and more","150","electrician electrical panel"],
+["🚿","Plumbing","Toilets, sinks, taps and more","180","plumber bathroom"],
+["🪑","Furniture","Assembly, installation and more","200","furniture assembly"],
+["📺","TV mounting","Brackets, cables and more","180","tv wall mount"],
+["🚪","Doors","Installation and adjustment and more","200","door installation"],
+["🪟","Windows","Adjustments and repairs and more","180","window repair"],
+["💡","Lighting","Chandeliers, spotlights and more","150","ceiling lights"],
+["🧱","Drywall","Walls, ceilings and more","250","drywall installation"],
+["🪚","Skirting boards","Installation and more","120","skirting board"],
+["🛠","General repairs","Small jobs and more","120","handyman tools"]
 ]
 },
 ru:{
@@ -228,16 +260,16 @@ footer:"© DANSHYN BUILDERS SRL • Бухарест • Опыт 10+ лет",
 name:"Имя",
 phone:"Телефон",
 services:[
-["Электрика","Розетки, освещение, щиты и другое","150","electrician electrical panel"],
-["Сантехника","Унитазы, раковины, смесители и другое","180","plumber bathroom"],
-["Мебель","Сборка, монтаж и другое","200","furniture assembly"],
-["Монтаж ТВ","Крепления, кабели и другое","180","tv wall mount"],
-["Двери","Монтаж и регулировка и другое","200","door installation"],
-["Окна","Регулировка и ремонт и другое","180","window repair"],
-["Освещение","Люстры, светильники и другое","150","ceiling lights"],
-["Гипсокартон","Стены, потолки и другое","250","drywall installation"],
-["Плинтусы","Монтаж и другое","120","skirting board"],
-["Мелкий ремонт","Разные работы и другое","120","handyman tools"]
+["⚡","Электрика","Розетки, освещение, щиты и другое","150","electrician electrical panel"],
+["🚿","Сантехника","Унитазы, раковины, смесители и другое","180","plumber bathroom"],
+["🪑","Мебель","Сборка, монтаж и другое","200","furniture assembly"],
+["📺","Монтаж ТВ","Крепления, кабели и другое","180","tv wall mount"],
+["🚪","Двери","Монтаж и регулировка и другое","200","door installation"],
+["🪟","Окна","Регулировка и ремонт и другое","180","window repair"],
+["💡","Освещение","Люстры, светильники и другое","150","ceiling lights"],
+["🧱","Гипсокартон","Стены, потолки и другое","250","drywall installation"],
+["🪚","Плинтусы","Монтаж и другое","120","skirting board"],
+["🛠","Мелкий ремонт","Разные работы и другое","120","handyman tools"]
 ]
 }
 };
@@ -260,11 +292,11 @@ services.innerHTML="";
 t.services.forEach(s=>{
 services.innerHTML+=`
 <div class="service" onclick="location.href='#contact'">
-<img src="https://source.unsplash.com/600x400/?${encodeURIComponent(s[3])}"
-onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1503387762-592deb58ef4e'">
+<img src="https://source.unsplash.com/600x400/?${encodeURIComponent(s[4])}">
+<div class="icon">${s[0]}</div>
 <div class="content">
-<b>${s[0]}</b><br>${s[1]}<br>
-<span class="price">de la ${s[2]} RON</span>
+<b>${s[1]}</b><br>${s[2]}
+<span class="price">de la ${s[3]} RON</span>
 </div>
 </div>`;
 });
