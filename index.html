@@ -1,1 +1,228 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Meșter la oră București | DANSHYN BUILDERS SRL</title>
+<meta name="description" content="Meșter la oră în București. Electricitate, instalații sanitare, montaj mobilă, reparații. Programare rapidă online.">
+<meta name="keywords" content="meșter la oră bucurești, electrician, instalator, handyman bucurești">
+
+<style>
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background:#f6f7f8;
+  color:#111827;
+}
+
+/* HEADER */
+header{
+  background:#fff;
+  padding:14px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #e5e7eb;
+}
+.logo{font-weight:900;font-size:18px}
+.contacts a{
+  margin-left:14px;
+  font-weight:700;
+  color:#16a34a;
+  text-decoration:none;
+}
+
+/* HERO */
+.hero{
+  background:#fff;
+  text-align:center;
+  padding:90px 20px 70px;
+}
+.hero h1{font-size:44px;margin-bottom:12px}
+.hero p{font-size:18px;color:#4b5563}
+.hero button{
+  margin-top:30px;
+  padding:16px 44px;
+  background:#22c55e;
+  border:none;
+  border-radius:999px;
+  font-weight:900;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* SECTIONS */
+section{max-width:1200px;margin:auto;padding:70px 20px}
+h2{text-align:center;font-size:32px;margin-bottom:40px}
+
+/* SERVICES */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:22px;
+}
+.card{
+  background:#fff;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 8px 25px rgba(0,0,0,.06);
+  cursor:pointer;
+  transition:.3s;
+}
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 45px rgba(0,0,0,.12);
+}
+.card img{width:100%;height:170px;object-fit:cover}
+.card-body{padding:18px}
+.card-body b{font-size:17px}
+.card-body p{font-size:14px;color:#4b5563}
+.price{font-weight:900;color:#16a34a}
+
+/* BOOKING MODAL */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  display:none;
+  align-items:center;
+  justify-content:center;
+}
+.modal-content{
+  background:#fff;
+  padding:30px;
+  border-radius:18px;
+  max-width:420px;
+  width:90%;
+}
+.modal-content button{
+  width:100%;
+  padding:14px;
+  background:#22c55e;
+  border:none;
+  color:#fff;
+  font-weight:900;
+  border-radius:12px;
+}
+.booking input, .booking select{
+  width:100%;
+  padding:14px;
+  margin-bottom:12px;
+}
+
+/* SEO */
+.seo{
+  background:#fff;
+  padding:50px 20px;
+  color:#374151;
+  line-height:1.6;
+}
+
+/* FOOTER */
+footer{
+  background:#111827;
+  color:#fff;
+  text-align:center;
+  padding:26px;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">DANSHYN BUILDERS SRL</div>
+  <div class="contacts">
+    <a href="tel:+40725135667">📞 +40725135667</a>
+    <a href="tel:+40758969693">+40758969693</a>
+    <a href="mailto:blockhouse.ro@gmail.com">✉ Email</a>
+  </div>
+</header>
+
+<div class="hero">
+  <h1>Meșter la oră în București</h1>
+  <p>Servicii rapide pentru locuință • Programare online</p>
+  <button onclick="openBooking()">Rezervă acum</button>
+</div>
+
+<section>
+<h2>Servicii populare</h2>
+<div class="services" id="services"></div>
+</section>
+
+<section class="seo">
+<h2>Meșter la oră București</h2>
+<p>
+Oferim servicii complete de reparații și montaj în București:
+electricitate, instalații sanitare, mobilă, TV, uși, ferestre și altele.
+Programare rapidă, prețuri transparente și meșteri cu experiență.
+</p>
+</section>
+
+<footer>
+© DANSHYN BUILDERS SRL • București • 10+ ani experiență
+</footer>
+
+<!-- BOOKING MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content booking">
+    <h3>Programare</h3>
+    <input id="name" placeholder="Nume">
+    <input id="phone" placeholder="Telefon">
+    <input type="date" id="date">
+    <select id="time">
+      <option>09:00</option><option>11:00</option>
+      <option>13:00</option><option>15:00</option>
+      <option>17:00</option>
+    </select>
+    <button onclick="send()">Trimite → WhatsApp & Telegram</button>
+  </div>
+</div>
+
+<script>
+const services=[
+["Electricitate","Prize, iluminat, tablouri și altele","150","electrician electrical panel"],
+["Instalații sanitare","WC, chiuvete, baterii și altele","180","plumber bathroom"],
+["Mobilă","Asamblare și montaj","200","furniture assembly"],
+["Montaj TV","Suporturi și cabluri","180","tv wall mount"],
+["Uși","Montaj și reglaj","200","door installation"],
+["Ferestre","Reglaje și reparații","180","window repair"],
+["Iluminat","Lustre și spoturi","150","ceiling lights"],
+["Gips-carton","Pereți și tavane","250","drywall installation"],
+["Plinte","Montaj și ajustare","120","skirting board"],
+["Reparații","Lucrări diverse","120","handyman tools"]
+];
+
+const box=document.getElementById("services");
+services.forEach(s=>{
+box.innerHTML+=`
+<div class="card" onclick="openBooking('${s[0]}')">
+<img src="https://source.unsplash.com/600x400/?${encodeURIComponent(s[3])}">
+<div class="card-body">
+<b>${s[0]}</b>
+<p>${s[1]}</p>
+<div class="price">de la ${s[2]} RON</div>
+</div>
+</div>`;
+});
+
+function openBooking(){
+document.getElementById("modal").style.display="flex";
+}
+
+function send(){
+const msg=`Bună ziua!
+Nume: ${name.value}
+Telefon: ${phone.value}
+Data: ${date.value}
+Ora: ${time.value}`;
+window.open("https://wa.me/40725135667?text="+encodeURIComponent(msg));
+window.open("https://t.me/share/url?text="+encodeURIComponent(msg));
+}
+</script>
+
+</body>
+</html>
