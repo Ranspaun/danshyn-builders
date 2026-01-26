@@ -5,164 +5,141 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>DANSHYN BUILDERS SRL – Meșter la oră București</title>
-<meta name="description" content="Meșter la oră în București. Electricitate, instalații sanitare, montaj mobilier, reparații. Programare rapidă.">
-<meta name="keywords" content="meșter la oră bucurești, handyman bucurești, electricitate, instalator, reparații">
+<meta name="description" content="Meșter la oră în București. Electricitate, instalații sanitare, montaj, reparații. Experiență 10+ ani.">
+<meta name="keywords" content="meșter la oră bucurești, handyman, electricitate, instalator, reparații">
 
 <style>
-:root{
-  --green:#22c55e;
-  --dark:#0f172a;
-  --muted:#64748b;
-  --bg:#f1f5f9;
-}
-*{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
   margin:0;
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
-  background:var(--bg);
-  color:var(--dark);
+  font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial;
+  background:#f3f6fb;
+  color:#0f172a;
 }
 
 /* HEADER */
 header{
-  background:#fff;
-  border-bottom:1px solid #e5e7eb;
   position:sticky;
   top:0;
   z-index:1000;
-}
-.nav{
-  max-width:1200px;
-  margin:auto;
-  padding:14px 20px;
+  background:#ffffff;
+  padding:16px 28px;
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
 }
-.logo{font-weight:900;font-size:18px}
-.contacts a{
-  margin-left:14px;
+.logo{font-size:20px;font-weight:900}
+.phones{
+  font-size:14px;
   font-weight:700;
+}
+.phones a{
+  color:#2563eb;
   text-decoration:none;
-  color:var(--green);
+  margin-right:12px;
 }
-.lang span{
-  margin-left:10px;
-  cursor:pointer;
-  font-weight:800;
-  opacity:.5;
-}
-.lang span.active{opacity:1}
 
 /* HERO */
 .hero{
   background:
-    linear-gradient(rgba(15,23,42,.65),rgba(15,23,42,.65)),
+    linear-gradient(rgba(30,64,175,.55),rgba(30,64,175,.55)),
     url("https://images.unsplash.com/photo-1503387762-592deb58ef4e");
   background-size:cover;
   background-position:center;
   color:#fff;
-}
-.hero-inner{
-  max-width:1200px;
-  margin:auto;
+  text-align:center;
   padding:90px 20px;
 }
-.hero h1{font-size:44px;max-width:600px}
-.hero p{font-size:18px;max-width:520px;color:#e5e7eb}
-.hero button{
-  margin-top:28px;
+.hero h1{font-size:42px}
+.hero p{font-size:18px}
+.hero a{
+  display:inline-block;
+  margin-top:30px;
   padding:16px 40px;
-  border:none;
+  background:#ffd000;
   border-radius:999px;
-  background:var(--green);
   font-weight:900;
-  color:#fff;
-  cursor:pointer;
+  color:#000;
+  text-decoration:none;
 }
 
 /* SECTIONS */
 section{
   max-width:1200px;
   margin:auto;
-  padding:70px 20px;
+  padding:80px 20px;
 }
-h2{font-size:32px;margin-bottom:30px}
+h2{text-align:center;margin-bottom:40px}
 
 /* SERVICES */
 .services{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:26px;
 }
-.card{
+.service{
   background:#fff;
-  border-radius:18px;
+  border-radius:20px;
   overflow:hidden;
-  box-shadow:0 10px 30px rgba(0,0,0,.06);
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
   cursor:pointer;
-  transition:.25s;
+  transition:.4s;
 }
-.card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 20px 50px rgba(0,0,0,.12);
+.service:hover{
+  transform:translateY(-6px) scale(1.03);
+  box-shadow:0 28px 55px rgba(0,0,0,.18);
 }
-.card img{
+.service img{
   width:100%;
-  height:160px;
+  height:180px;
   object-fit:cover;
 }
-.card-body{padding:18px}
-.card-body b{font-size:17px}
-.card-body p{font-size:14px;color:var(--muted)}
-.price{margin-top:6px;font-weight:900;color:var(--green)}
+.content{padding:18px}
+.price{font-weight:800;color:#2563eb}
 
 /* HOW */
 .how{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:20px;
+  gap:30px;
 }
 .step{
   background:#fff;
-  border-radius:20px;
   padding:30px;
+  border-radius:20px;
   box-shadow:0 12px 30px rgba(0,0,0,.08);
   text-align:center;
 }
 
-/* SEO */
-.seo{
-  font-size:14px;
-  color:var(--muted);
-  line-height:1.6;
+/* CONTACT */
+.contact{
+  background:#fff;
+  max-width:520px;
+  margin:auto;
+  padding:32px;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,.1);
 }
-
-/* CTA MOBILE */
-.mobile-cta{
-  position:fixed;
-  bottom:16px;
-  right:16px;
-  background:#25d366;
+.contact input,.contact button{
+  width:100%;
+  padding:15px;
+  margin-bottom:14px;
+}
+.contact button{
+  background:#22c55e;
+  border:none;
   color:#fff;
-  padding:16px 22px;
-  border-radius:999px;
   font-weight:900;
-  box-shadow:0 15px 40px rgba(0,0,0,.3);
-  text-decoration:none;
-  display:none;
-}
-@media(max-width:768px){
-  .mobile-cta{display:block}
+  border-radius:12px;
 }
 
 /* FOOTER */
 footer{
-  background:#020617;
+  background:#0f172a;
   color:#fff;
-  padding:30px 20px;
   text-align:center;
-  font-size:14px;
+  padding:28px;
 }
 </style>
 </head>
@@ -170,116 +147,79 @@ footer{
 <body>
 
 <header>
-  <div class="nav">
-    <div class="logo">DANSHYN BUILDERS SRL</div>
-    <div>
-      <span class="lang">
-        <span onclick="setLang('ro')" class="active">RO</span>
-        <span onclick="setLang('en')">EN</span>
-        <span onclick="setLang('ru')">RU</span>
-      </span>
-      <span class="contacts">
-        <a href="tel:+40725135667">+40725135667</a>
-        <a href="tel:+40758969693">+40758969693</a>
-        <a href="mailto:blockhouse.ro@gmail.com">Email</a>
-      </span>
-    </div>
+  <div class="logo">DANSHYN BUILDERS SRL</div>
+  <div class="phones">
+    <a href="tel:+40725135667">+40725135667</a>
+    <a href="tel:+40758969693">+40758969693</a>
+    <a href="mailto:blockhouse.ro@gmail.com">blockhouse.ro@gmail.com</a>
   </div>
 </header>
 
 <div class="hero">
-  <div class="hero-inner">
-    <h1 data-t="heroTitle">Meșter la oră în București</h1>
-    <p data-t="heroSub">Servicii profesionale pentru locuință și birou</p>
-    <button onclick="location.href='tel:+40725135667'" data-t="heroBtn">Sună acum</button>
-  </div>
+  <h1>Meșter la oră în București</h1>
+  <p>Reparații și servicii profesionale pentru locuință</p>
+  <a href="#contact">Contactează-ne</a>
 </div>
 
 <section>
-  <h2 data-t="services">Serviciile noastre</h2>
-  <div class="services" id="services"></div>
+<h2>Serviciile noastre</h2>
+<div class="services">
+  <div class="service">
+    <img src="https://images.unsplash.com/600x400/?electrician">
+    <div class="content">
+      <b>Electricitate</b><br>
+      Prize, iluminat, tablouri electrice<br>
+      <span class="price">De la 150 RON</span>
+    </div>
+  </div>
+
+  <div class="service">
+    <img src="https://images.unsplash.com/600x400/?plumber">
+    <div class="content">
+      <b>Instalații sanitare</b><br>
+      WC, chiuvete, baterii<br>
+      <span class="price">De la 180 RON</span>
+    </div>
+  </div>
+
+  <div class="service">
+    <img src="https://images.unsplash.com/600x400/?furniture,assembly">
+    <div class="content">
+      <b>Mobilă</b><br>
+      Asamblare și montaj<br>
+      <span class="price">De la 200 RON</span>
+    </div>
+  </div>
+</div>
 </section>
 
 <section>
-  <h2 data-t="how">Cum lucrăm</h2>
-  <div class="how">
-    <div class="step" data-t="step1">Ne contactezi</div>
-    <div class="step" data-t="step2">Venim rapid</div>
-    <div class="step" data-t="step3">Rezolvăm problema</div>
-  </div>
+<h2>Cum lucrăm</h2>
+<div class="how">
+  <div class="step">Ne contactezi</div>
+  <div class="step">Venim rapid</div>
+  <div class="step">Rezolvăm problema</div>
+</div>
 </section>
 
-<section class="seo">
-  <h2>Meșter la oră București</h2>
-  <p>
-    DANSHYN BUILDERS SRL oferă servicii de meșter la oră în București:
-    electricitate, instalații sanitare, montaj mobilier, reparații interioare
-    și alte lucrări pentru locuințe și spații comerciale.
-  </p>
+<section id="contact">
+<h2>Contact</h2>
+<div class="contact">
+<input placeholder="Nume">
+<input placeholder="Telefon">
+<button onclick="send()">Trimite → WhatsApp</button>
+</div>
 </section>
 
 <footer>
 © DANSHYN BUILDERS SRL • București • 10+ ani experiență
 </footer>
 
-<a class="mobile-cta" href="https://wa.me/40725135667">WhatsApp</a>
-
 <script>
-const data={
-ro:{
-heroTitle:"Meșter la oră în București",
-heroSub:"Servicii profesionale pentru locuință și birou",
-heroBtn:"Sună acum",
-servicesTitle:"Serviciile noastre",
-how:"Cum lucrăm",
-step1:"Ne contactezi",
-step2:"Venim rapid",
-step3:"Rezolvăm problema",
-services:[
-["Electricitate","Prize, iluminat, tablouri și altele","150","electrician panel"],
-["Instalații sanitare","WC, chiuvete, baterii și altele","180","plumber bathroom"],
-["Mobilă","Asamblare și montaj și altele","200","furniture assembly"],
-["Montaj TV","Suporturi, cabluri și altele","180","tv wall mount"],
-["Uși","Montaj și reglaj și altele","200","door installation"],
-["Ferestre","Reglaje și reparații","180","window repair"],
-["Gips-carton","Pereți și tavane","250","drywall work"],
-["Iluminat","Lustre și spoturi","150","ceiling lights"],
-["Reparații","Lucrări minore","120","handyman tools"],
-["Plinte","Montaj și ajustare","120","skirting board"],
-["Electrocasnice","Conectare și montaj","180","home appliances"],
-["Băi","Reparații și ajustări","200","bathroom repair"]
-]
-},
-en:{...null},
-ru:{...null}
-};
-
-function setLang(l){
-document.querySelectorAll(".lang span").forEach(s=>s.classList.remove("active"));
-document.querySelector(`.lang span[onclick*="${l}"]`).classList.add("active");
-document.querySelectorAll("[data-t]").forEach(el=>{
-el.textContent=data[l][el.dataset.t];
-});
-renderServices(l);
+function send(){
+  const msg="Bună ziua! Am nevoie de un meșter.";
+  window.open("https://wa.me/40725135667?text="+encodeURIComponent(msg));
 }
-
-function renderServices(l){
-const box=document.getElementById("services");
-box.innerHTML="";
-data[l].services.forEach(s=>{
-box.innerHTML+=`
-<div class="card">
-<img src="https://source.unsplash.com/600x400/?${s[3]}" onerror="this.src='https://images.unsplash.com/photo-1503387762-592deb58ef4e'">
-<div class="card-body">
-<b>${s[0]}</b>
-<p>${s[1]}</p>
-<div class="price">de la ${s[2]} RON</div>
-</div>
-</div>`;
-});
-}
-
-renderServices("ro");
 </script>
 
 </body>
