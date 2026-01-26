@@ -5,32 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>DANSHYN BUILDERS SRL – Meșter la oră București</title>
-<meta name="description" content="Meșter la oră în București. Electricitate, instalații sanitare, montaj, reparații. Experiență 10+ ani.">
+<meta name="description" content="Meșter la oră în București. Reparații, electricitate, instalații sanitare, montaj. Experiență 10+ ani.">
 
 <style>
 html{scroll-behavior:smooth}
 body{
   margin:0;
   font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial;
-  background:#eef3fb;
+  background:linear-gradient(180deg,#f8fafc,#eef2f7);
   color:#0f172a;
 }
+
+/* HEADER */
 header{
   position:sticky;
   top:0;
+  z-index:1000;
   background:#fff;
   padding:16px 28px;
   display:flex;
   justify-content:space-between;
   align-items:center;
   box-shadow:0 8px 25px rgba(0,0,0,.08);
-  z-index:1000;
 }
-.logo{font-weight:900;font-size:20px}
+.logo{font-size:20px;font-weight:900}
 .phones a{
-  margin-right:14px;
   color:#2563eb;
   text-decoration:none;
+  margin-right:14px;
   font-weight:700;
 }
 .lang span{
@@ -41,15 +43,19 @@ header{
 }
 .lang span.active{opacity:1}
 
+/* HERO */
 .hero{
-  background:linear-gradient(rgba(30,64,175,.55),rgba(30,64,175,.55)),
-  url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80");
+  background:
+    linear-gradient(rgba(30,64,175,.55),rgba(30,64,175,.55)),
+    url("https://images.unsplash.com/photo-1503387762-592deb58ef4e");
   background-size:cover;
+  background-position:center;
   color:#fff;
   text-align:center;
   padding:90px 20px;
 }
 .hero h1{font-size:42px}
+.hero p{font-size:18px}
 .hero a{
   display:inline-block;
   margin-top:30px;
@@ -61,34 +67,107 @@ header{
   text-decoration:none;
 }
 
-section{max-width:1200px;margin:auto;padding:80px 20px}
+/* SECTIONS */
+section{
+  max-width:1200px;
+  margin:auto;
+  padding:80px 20px;
+}
+h2{text-align:center;margin-bottom:40px}
+
+/* SERVICES */
 .services{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:26px;
 }
 .service{
+  position:relative;
   background:#fff;
   border-radius:20px;
   overflow:hidden;
   box-shadow:0 12px 30px rgba(0,0,0,.08);
-  transition:.3s;
   cursor:pointer;
+  transition:.35s;
 }
-.service:hover{transform:translateY(-6px)}
+.service:hover{
+  transform:translateY(-6px) scale(1.02);
+  box-shadow:0 30px 60px rgba(0,0,0,.18);
+}
 .service img{
   width:100%;
   height:180px;
   object-fit:cover;
 }
+.svg-icon{
+  position:absolute;
+  top:14px;
+  left:14px;
+  width:42px;
+  height:42px;
+  background:#2563eb;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 6px 18px rgba(0,0,0,.25);
+}
+.svg-icon svg{
+  width:22px;
+  height:22px;
+  fill:#fff;
+}
 .content{padding:18px}
-.price{color:#2563eb;font-weight:800}
+.price{font-weight:800;color:#2563eb}
 
+/* CONTACT */
+.contact{
+  background:#fff;
+  max-width:520px;
+  margin:auto;
+  padding:32px;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,.1);
+}
+.contact input,.contact button{
+  width:100%;
+  padding:15px;
+  margin-bottom:14px;
+}
+.contact button{
+  background:#22c55e;
+  border:none;
+  color:#fff;
+  font-weight:900;
+  border-radius:12px;
+}
+
+/* FOOTER */
 footer{
   background:#0f172a;
   color:#fff;
   text-align:center;
   padding:28px;
+}
+
+/* MOBILE CTA */
+.mobile-cta{
+  position:fixed;
+  bottom:18px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#22c55e;
+  color:#fff;
+  padding:16px 26px;
+  border-radius:999px;
+  font-weight:900;
+  text-decoration:none;
+  box-shadow:0 18px 40px rgba(0,0,0,.25);
+  z-index:9999;
+  display:none;
+}
+@media(max-width:768px){
+  .mobile-cta{display:block}
 }
 </style>
 </head>
@@ -103,75 +182,169 @@ footer{
     <a href="mailto:blockhouse.ro@gmail.com">blockhouse.ro@gmail.com</a>
   </div>
   <div class="lang">
-    <span class="active">RO</span>
+    <span data-lang="ro" class="active">RO</span>
+    <span data-lang="en">EN</span>
+    <span data-lang="ru">RU</span>
   </div>
 </header>
 
 <div class="hero">
-  <h1>Meșter la oră în București</h1>
-  <a href="#contact">Contactează-ne</a>
+  <h1 id="hero_title"></h1>
+  <p id="hero_sub"></p>
+  <a href="#contact" id="cta"></a>
 </div>
 
 <section>
-<h2>Serviciile noastre</h2>
-
-<div class="services">
-
-<div class="service">
-<img src="https://images.unsplash.com/photo-1581091870627-3e84b1f1c0f1?auto=format&fit=crop&w=800&q=80">
-<div class="content">
-<b>Electricitate</b><br>
-Prize, iluminat, tablouri electrice și altele<br>
-<span class="price">de la 150 RON</span>
-</div>
-</div>
-
-<div class="service">
-<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80">
-<div class="content">
-<b>Instalații sanitare</b><br>
-WC, chiuvete, baterii și altele<br>
-<span class="price">de la 180 RON</span>
-</div>
-</div>
-
-<div class="service">
-<img src="https://images.unsplash.com/photo-1585128792020-803d29415281?auto=format&fit=crop&w=800&q=80">
-<div class="content">
-<b>Mobilă</b><br>
-Asamblare, montaj și altele<br>
-<span class="price">de la 200 RON</span>
-</div>
-</div>
-
-<div class="service">
-<img src="https://images.unsplash.com/photo-1598300053653-7a0c0c64a30e?auto=format&fit=crop&w=800&q=80">
-<div class="content">
-<b>Gips-carton</b><br>
-Pereți, tavane și altele<br>
-<span class="price">de la 250 RON</span>
-</div>
-</div>
-
-<div class="service">
-<img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=800&q=80">
-<div class="content">
-<b>Reparații diverse</b><br>
-Lucrări mici, ajustări și altele<br>
-<span class="price">de la 120 RON</span>
-</div>
-</div>
-
-</div>
+<h2 id="services_title"></h2>
+<div class="services" id="services"></div>
 </section>
 
 <section id="contact">
-<h2>Contact</h2>
+<h2 id="contact_title"></h2>
+<div class="contact">
+<input id="name">
+<input id="phone">
+<button onclick="send()" id="send_btn"></button>
+</div>
 </section>
 
-<footer>
-© DANSHYN BUILDERS SRL • București • 10+ ani experiență
-</footer>
+<footer id="footer"></footer>
+
+<a href="#contact" class="mobile-cta">📞 Comandă meșter</a>
+
+<script>
+const IMAGES={
+electric:"https://images.unsplash.com/photo-1581091870627-3c4c3d2c2b12",
+plumbing:"https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+furniture:"https://images.unsplash.com/photo-1586023492125-27b2c045efd7",
+tv:"https://images.unsplash.com/photo-1593784991095-a205069470b6",
+door:"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+window:"https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
+lighting:"https://images.unsplash.com/photo-1519710164239-da123dc03ef4",
+drywall:"https://images.unsplash.com/photo-1581091012184-7c54c8cdd7b7",
+skirting:"https://images.unsplash.com/photo-1600121848594-d8644e57abab",
+repair:"https://images.unsplash.com/photo-1581579186913-45ac2b68c7e9"
+};
+
+const data={
+ro:{
+hero_title:"Meșter la oră în București",
+hero_sub:"Reparații și servicii profesionale pentru locuință",
+cta:"Contactează-ne",
+services_title:"Serviciile noastre",
+contact_title:"Contact",
+send:"Trimite → WhatsApp & Telegram",
+footer:"© DANSHYN BUILDERS SRL • București • 10+ ani experiență",
+name:"Nume",
+phone:"Telefon",
+services:[
+["Electricitate","Prize, iluminat, tablouri electrice și altele","150","electric"],
+["Instalații sanitare","WC, chiuvete, baterii și altele","180","plumbing"],
+["Mobilă","Asamblare, montaj și altele","200","furniture"],
+["Montaj TV","Suporturi, cabluri și altele","180","tv"],
+["Uși","Montaj și reglaj și altele","200","door"],
+["Ferestre","Reglaje și reparații și altele","180","window"],
+["Iluminat","Lustre, spoturi și altele","150","lighting"],
+["Gips-carton","Pereți, tavane și altele","250","drywall"],
+["Plinte","Montaj și ajustare și altele","120","skirting"],
+["Reparații diverse","Lucrări mici și altele","120","repair"]
+]
+},
+en:{
+hero_title:"Handyman services in Bucharest",
+hero_sub:"Professional home repair services",
+cta:"Contact us",
+services_title:"Our services",
+contact_title:"Contact",
+send:"Send → WhatsApp & Telegram",
+footer:"© DANSHYN BUILDERS SRL • Bucharest • 10+ years experience",
+name:"Name",
+phone:"Phone",
+services:[
+["Electrical","Sockets, lighting, panels and more","150","electric"],
+["Plumbing","Toilets, sinks, taps and more","180","plumbing"],
+["Furniture","Assembly and installation and more","200","furniture"],
+["TV mounting","Brackets and cables and more","180","tv"],
+["Doors","Installation and adjustment and more","200","door"],
+["Windows","Repairs and adjustments and more","180","window"],
+["Lighting","Chandeliers and spotlights and more","150","lighting"],
+["Drywall","Walls and ceilings and more","250","drywall"],
+["Skirting boards","Installation and more","120","skirting"],
+["General repairs","Small jobs and more","120","repair"]
+]
+},
+ru:{
+hero_title:"Муж на час в Бухаресте",
+hero_sub:"Профессиональный ремонт и услуги для дома",
+cta:"Связаться с нами",
+services_title:"Наши услуги",
+contact_title:"Контакты",
+send:"Отправить → WhatsApp & Telegram",
+footer:"© DANSHYN BUILDERS SRL • Бухарест • Опыт 10+ лет",
+name:"Имя",
+phone:"Телефон",
+services:[
+["Электрика","Розетки, освещение, щиты и другое","150","electric"],
+["Сантехника","Унитазы, раковины, смесители и другое","180","plumbing"],
+["Мебель","Сборка, монтаж и другое","200","furniture"],
+["Монтаж ТВ","Крепления и кабели и другое","180","tv"],
+["Двери","Монтаж и регулировка и другое","200","door"],
+["Окна","Ремонт и регулировка и другое","180","window"],
+["Освещение","Люстры и светильники и другое","150","lighting"],
+["Гипсокартон","Стены и потолки и другое","250","drywall"],
+["Плинтусы","Монтаж и другое","120","skirting"],
+["Мелкий ремонт","Разные работы и другое","120","repair"]
+]
+}
+};
+
+let lang="ro";
+
+function render(){
+const t=data[lang];
+hero_title.innerText=t.hero_title;
+hero_sub.innerText=t.hero_sub;
+cta.innerText=t.cta;
+services_title.innerText=t.services_title;
+contact_title.innerText=t.contact_title;
+send_btn.innerText=t.send;
+footer.innerText=t.footer;
+name.placeholder=t.name;
+phone.placeholder=t.phone;
+
+services.innerHTML="";
+t.services.forEach(s=>{
+services.innerHTML+=`
+<div class="service" onclick="location.href='#contact'">
+<img src="${IMAGES[s[3]]}">
+<div class="svg-icon">
+<svg viewBox="0 0 24 24"><path d="M3 12h18"/></svg>
+</div>
+<div class="content">
+<b>${s[0]}</b><br>${s[1]}<br>
+<span class="price">de la ${s[2]} RON</span>
+</div>
+</div>`;
+});
+}
+
+document.querySelectorAll(".lang span").forEach(el=>{
+el.onclick=()=>{
+document.querySelectorAll(".lang span").forEach(s=>s.classList.remove("active"));
+el.classList.add("active");
+lang=el.dataset.lang;
+render();
+};
+});
+
+function send(){
+const msg="Bună ziua! Am nevoie de un meșter.";
+window.open("https://wa.me/40725135667?text="+encodeURIComponent(msg));
+window.open("https://t.me/share/url?text="+encodeURIComponent(msg));
+}
+
+render();
+</script>
 
 </body>
 </html>
