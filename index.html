@@ -169,7 +169,7 @@ footer{
 <footer id="footer"></footer>
 
 <script>
-const images = {
+const IMAGES = {
   electric: "https://images.unsplash.com/photo-1581092334394-7a6f1d7b2a2c?auto=format&fit=crop&w=800&q=80",
   plumbing: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
   furniture: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80",
@@ -180,9 +180,8 @@ const images = {
   drywall: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80",
   repair: "https://images.unsplash.com/photo-1581579185169-1c3cba83a6a5?auto=format&fit=crop&w=800&q=80"
 };
-</script>
 
-const data={
+const data = {
 ro:{
 hero_title:"Meșter la oră în București",
 hero_sub:"Reparații și servicii profesionale pentru locuință",
@@ -203,50 +202,6 @@ services:[
 ["Iluminat","Lustre, spoturi și altele","150","light"],
 ["Gips-carton","Pereți, tavane și altele","250","drywall"],
 ["Reparații diverse","Lucrări mici și altele","120","repair"]
-]
-},
-en:{
-hero_title:"Handyman services in Bucharest",
-hero_sub:"Professional home repair and maintenance",
-cta:"Contact us",
-services_title:"Our services",
-contact_title:"Contact",
-send:"Send → WhatsApp & Telegram",
-footer:"© DANSHYN BUILDERS SRL • Bucharest • 10+ years experience",
-name:"Name",
-phone:"Phone",
-services:[
-["Electrical","Sockets, lighting, panels and more","150","electric"],
-["Plumbing","Toilets, sinks, taps and more","180","plumbing"],
-["Furniture","Assembly, installation and more","200","furniture"],
-["TV mounting","Brackets, cables and more","180","tv"],
-["Doors","Installation and adjustment and more","200","door"],
-["Windows","Repairs and adjustments and more","180","window"],
-["Lighting","Chandeliers, spotlights and more","150","light"],
-["Drywall","Walls, ceilings and more","250","drywall"],
-["General repairs","Small jobs and more","120","repair"]
-]
-},
-ru:{
-hero_title:"Муж на час в Бухаресте",
-hero_sub:"Профессиональный ремонт и услуги для дома",
-cta:"Связаться",
-services_title:"Наши услуги",
-contact_title:"Контакты",
-send:"Отправить → WhatsApp & Telegram",
-footer:"© DANSHYN BUILDERS SRL • Бухарест • Опыт 10+ лет",
-name:"Имя",
-phone:"Телефон",
-services:[
-["Электрика","Розетки, освещение, щиты и другое","150","electric"],
-["Сантехника","Унитазы, раковины, смесители и другое","180","plumbing"],
-["Мебель","Сборка, монтаж и другое","200","furniture"],
-["Монтаж ТВ","Крепления, кабели и другое","180","tv"],
-["Двери","Монтаж и регулировка и другое","200","door"],
-["Окна","Ремонт и регулировка и другое","180","window"],
-["Освещение","Люстры, светильники и другое","150","light"],
-["Гипсокартон","Стены, потолки и другое","250","drywall"],
-["Мелкий ремонт","Разные работы и другое","120","repair"]
 ]
 }
 };
@@ -269,7 +224,7 @@ services.innerHTML="";
 t.services.forEach(s=>{
 services.innerHTML+=`
 <div class="service" onclick="location.href='#contact'">
-<img src="https://images.unsplash.com/${images[s[3]]}?auto=format&fit=crop&w=800&q=80">
+<img src="${IMAGES[s[3]]}">
 <div class="content">
 <b>${s[0]}</b><br>${s[1]}<br>
 <span class="price">de la ${s[2]} RON</span>
@@ -298,4 +253,3 @@ render();
 
 </body>
 </html>
-
