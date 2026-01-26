@@ -39,7 +39,7 @@ header{
   margin-left:10px;
   cursor:pointer;
   font-weight:800;
-  opacity:.6;
+  opacity:.5;
 }
 .lang span.active{opacity:1}
 
@@ -88,11 +88,9 @@ h2{text-align:center;margin-bottom:40px}
   overflow:hidden;
   box-shadow:0 12px 30px rgba(0,0,0,.08);
   cursor:pointer;
-  transition:.4s;
+  transition:.3s;
 }
-.service:hover{
-  transform:translateY(-6px) scale(1.03);
-}
+.service:hover{transform:translateY(-6px)}
 .service img{
   width:100%;
   height:180px;
@@ -100,20 +98,6 @@ h2{text-align:center;margin-bottom:40px}
 }
 .content{padding:18px}
 .price{font-weight:800;color:#2563eb}
-
-/* HOW */
-.how{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:30px;
-}
-.step{
-  background:#fff;
-  padding:30px;
-  border-radius:20px;
-  box-shadow:0 12px 30px rgba(0,0,0,.08);
-  text-align:center;
-}
 
 /* CONTACT */
 .contact{
@@ -157,54 +141,41 @@ footer{
     <a href="mailto:blockhouse.ro@gmail.com">blockhouse.ro@gmail.com</a>
   </div>
   <div class="lang">
-    <span onclick="setLang('ro')" class="active">RO</span>
-    <span onclick="setLang('en')">EN</span>
-    <span onclick="setLang('ru')">RU</span>
+    <span data-lang="ro" class="active">RO</span>
+    <span data-lang="en">EN</span>
+    <span data-lang="ru">RU</span>
   </div>
 </header>
 
 <div class="hero">
-  <h1 data-key="hero_title"></h1>
-  <p data-key="hero_sub"></p>
-  <a href="#contact" data-key="cta"></a>
+  <h1 id="hero_title"></h1>
+  <p id="hero_sub"></p>
+  <a href="#contact" id="cta"></a>
 </div>
 
 <section>
-<h2 data-key="services_title"></h2>
+<h2 id="services_title"></h2>
 <div class="services" id="services"></div>
 </section>
 
-<section>
-<h2 data-key="how_title"></h2>
-<div class="how">
-  <div class="step" data-key="how_1"></div>
-  <div class="step" data-key="how_2"></div>
-  <div class="step" data-key="how_3"></div>
-</div>
-</section>
-
 <section id="contact">
-<h2 data-key="contact_title"></h2>
+<h2 id="contact_title"></h2>
 <div class="contact">
-<input data-key-placeholder="name">
-<input data-key-placeholder="phone">
-<button onclick="send()" data-key="send"></button>
+<input id="name">
+<input id="phone">
+<button onclick="send()" id="send_btn"></button>
 </div>
 </section>
 
-<footer data-key="footer"></footer>
+<footer id="footer"></footer>
 
 <script>
-const translations={
+const data={
 ro:{
 hero_title:"Meșter la oră în București",
 hero_sub:"Reparații și servicii profesionale pentru locuință",
 cta:"Contactează-ne",
 services_title:"Serviciile noastre",
-how_title:"Cum lucrăm",
-how_1:"Ne contactezi",
-how_2:"Venim rapid",
-how_3:"Rezolvăm problema",
 contact_title:"Contact",
 send:"Trimite → WhatsApp & Telegram",
 footer:"© DANSHYN BUILDERS SRL • București • 10+ ani experiență",
@@ -214,79 +185,68 @@ services:[
 ["Electricitate","Prize, iluminat, tablouri electrice și altele","150","electrician"],
 ["Instalații sanitare","WC, chiuvete, baterii și altele","180","plumber"],
 ["Mobilă","Asamblare, montaj și altele","200","furniture"],
-["Montaj TV","Suporturi, cabluri și altele","180","tv mount"],
+["Montaj TV","Suporturi și altele","180","tv mount"],
 ["Reparații diverse","Lucrări mici și altele","120","handyman"]
 ]
 },
 en:{
 hero_title:"Handyman services in Bucharest",
-hero_sub:"Professional repair and home services",
+hero_sub:"Professional home repair services",
 cta:"Contact us",
 services_title:"Our services",
-how_title:"How it works",
-how_1:"You contact us",
-how_2:"We arrive quickly",
-how_3:"We fix the problem",
 contact_title:"Contact",
 send:"Send → WhatsApp & Telegram",
 footer:"© DANSHYN BUILDERS SRL • Bucharest • 10+ years experience",
 name:"Name",
 phone:"Phone",
 services:[
-["Electrical works","Sockets, lighting, panels and more","150","electrician"],
-["Plumbing","Toilets, sinks, taps and more","180","plumber"],
-["Furniture","Assembly, installation and more","200","furniture"],
-["TV mounting","Brackets, cables and more","180","tv mount"],
+["Electrical","Sockets, lighting and more","150","electrician"],
+["Plumbing","Toilets, sinks and more","180","plumber"],
+["Furniture","Assembly and more","200","furniture"],
+["TV Mounting","Brackets and more","180","tv mount"],
 ["General repairs","Small jobs and more","120","handyman"]
 ]
 },
 ru:{
 hero_title:"Муж на час в Бухаресте",
-hero_sub:"Профессиональный ремонт и услуги для дома",
+hero_sub:"Профессиональные услуги для дома",
 cta:"Связаться с нами",
 services_title:"Наши услуги",
-how_title:"Как мы работаем",
-how_1:"Вы связываетесь с нами",
-how_2:"Быстро приезжаем",
-how_3:"Решаем проблему",
 contact_title:"Контакты",
 send:"Отправить → WhatsApp & Telegram",
 footer:"© DANSHYN BUILDERS SRL • Бухарест • Опыт 10+ лет",
 name:"Имя",
 phone:"Телефон",
 services:[
-["Электрика","Розетки, освещение, щиты и другое","150","electrician"],
-["Сантехника","Унитазы, раковины, смесители и другое","180","plumber"],
-["Мебель","Сборка, монтаж и другое","200","furniture"],
-["Монтаж ТВ","Крепления, кабели и другое","180","tv mount"],
-["Мелкий ремонт","Разные работы и другое","120","handyman"]
+["Электрика","Розетки, освещение и другое","150","electrician"],
+["Сантехника","Унитазы, раковины и другое","180","plumber"],
+["Мебель","Сборка и другое","200","furniture"],
+["Монтаж ТВ","Крепления и другое","180","tv mount"],
+["Ремонт","Мелкие работы и другое","120","handyman"]
 ]
 }
 };
 
-let currentLang="ro";
+let lang="ro";
 
-function setLang(lang){
-currentLang=lang;
-document.querySelectorAll(".lang span").forEach(s=>s.classList.remove("active"));
-event.target.classList.add("active");
+function render(){
+const t=data[lang];
+hero_title.innerText=t.hero_title;
+hero_sub.innerText=t.hero_sub;
+cta.innerText=t.cta;
+services_title.innerText=t.services_title;
+contact_title.innerText=t.contact_title;
+send_btn.innerText=t.send;
+footer.innerText=t.footer;
+name.placeholder=t.name;
+phone.placeholder=t.phone;
 
-document.querySelectorAll("[data-key]").forEach(el=>{
-el.innerText=translations[lang][el.dataset.key];
-});
-document.querySelectorAll("[data-key-placeholder]").forEach(el=>{
-el.placeholder=translations[lang][el.dataset.keyPlaceholder];
-});
-renderServices();
-}
-
-function renderServices(){
-const box=document.getElementById("services");
-box.innerHTML="";
-translations[currentLang].services.forEach(s=>{
-box.innerHTML+=`
+services.innerHTML="";
+t.services.forEach(s=>{
+services.innerHTML+=`
 <div class="service" onclick="location.href='#contact'">
-<img src="https://images.unsplash.com/600x400/?${encodeURIComponent(s[3])}">
+<img src="https://images.unsplash.com/600x400/?${s[3]}" 
+     onerror="this.src='https://images.unsplash.com/photo-1503387762-592deb58ef4e'">
 <div class="content">
 <b>${s[0]}</b><br>${s[1]}<br>
 <span class="price">de la ${s[2]} RON</span>
@@ -295,13 +255,22 @@ box.innerHTML+=`
 });
 }
 
+document.querySelectorAll(".lang span").forEach(el=>{
+el.onclick=()=>{
+document.querySelectorAll(".lang span").forEach(s=>s.classList.remove("active"));
+el.classList.add("active");
+lang=el.dataset.lang;
+render();
+};
+});
+
 function send(){
 const msg="Bună ziua! Am nevoie de un meșter.";
 window.open("https://wa.me/40725135667?text="+encodeURIComponent(msg));
 window.open("https://t.me/share/url?text="+encodeURIComponent(msg));
 }
 
-setLang("ro");
+render();
 </script>
 
 </body>
