@@ -76,12 +76,14 @@ h2{text-align:center;margin-bottom:40px}
   gap:26px;
 }
 .service{
+  position:relative; /* ← ВОТ ЭТО */
   background:#fff;
   border-radius:20px;
   overflow:hidden;
   box-shadow:0 12px 30px rgba(0,0,0,.08);
   cursor:pointer;
-  transition:.35s;
+  transition:.4s;
+  animation:pulse 4s infinite;
 }
 .service:hover{
   transform:translateY(-6px);
@@ -274,4 +276,5 @@ function send(){
 
 </body>
 </html>
+
 
