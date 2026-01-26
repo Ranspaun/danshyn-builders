@@ -82,7 +82,6 @@ h2{text-align:center;margin-bottom:40px}
   gap:26px;
 }
 .service{
-  position:relative;
   background:#fff;
   border-radius:20px;
   overflow:hidden;
@@ -99,28 +98,10 @@ h2{text-align:center;margin-bottom:40px}
   height:180px;
   object-fit:cover;
 }
-.svg-icon{
-  position:absolute;
-  top:14px;
-  left:14px;
-  width:42px;
-  height:42px;
-  background:#2563eb;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 6px 18px rgba(0,0,0,.25);
-}
-.svg-icon svg{
-  width:22px;
-  height:22px;
-  fill:#fff;
-}
 .content{padding:18px}
 .price{font-weight:800;color:#2563eb}
 
-/* CONTACT */
+/* BOOKING */
 .contact{
   background:#fff;
   max-width:520px;
@@ -129,7 +110,9 @@ h2{text-align:center;margin-bottom:40px}
   border-radius:20px;
   box-shadow:0 15px 40px rgba(0,0,0,.1);
 }
-.contact input,.contact button{
+.contact input,
+.contact select,
+.contact button{
   width:100%;
   padding:15px;
   margin-bottom:14px;
@@ -202,9 +185,12 @@ footer{
 <section id="contact">
 <h2 id="contact_title"></h2>
 <div class="contact">
-<input id="name">
-<input id="phone">
-<button onclick="send()" id="send_btn"></button>
+  <select id="service_select"></select>
+  <input type="date" id="date">
+  <input type="time" id="time">
+  <input id="name">
+  <input id="phone">
+  <button onclick="sendBooking()" id="send_btn"></button>
 </div>
 </section>
 
@@ -214,19 +200,16 @@ footer{
 
 <script>
 const IMAGES={
-electric:"https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=1200&q=80",
-plumbing:"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-furniture:"https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80",
-tv:"https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1200&q=80",
-door:"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
-window:"https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
-lighting:"https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&w=1200&q=80",
-
-/* 🔧 ИСПРАВЛЕНО */
-drywall:"https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80",
-repair:"https://images.unsplash.com/photo-1590650046871-92c887180603?auto=format&fit=crop&w=1200&q=80",
-
-skirting:"https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=1200&q=80"
+electric:"https://images.unsplash.com/photo-1581091870627-3c4c3d2c2b12",
+plumbing:"https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+furniture:"https://images.unsplash.com/photo-1586023492125-27b2c045efd7",
+tv:"https://images.unsplash.com/photo-1593784991095-a205069470b6",
+door:"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+window:"https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
+lighting:"https://images.unsplash.com/photo-1519710164239-da123dc03ef4",
+drywall:"https://images.unsplash.com/photo-1581091012184-7c54c8cdd7b7",
+skirting:"https://images.unsplash.com/photo-1600121848594-d8644e57abab",
+repair:"https://images.unsplash.com/photo-1581579186913-45ac2b68c7e9"
 };
 
 const data={
@@ -235,7 +218,7 @@ hero_title:"Meșter la oră în București",
 hero_sub:"Reparații și servicii profesionale pentru locuință",
 cta:"Contactează-ne",
 services_title:"Serviciile noastre",
-contact_title:"Contact",
+contact_title:"Programare online",
 send:"Trimite → WhatsApp & Telegram",
 footer:"© DANSHYN BUILDERS SRL • București • 10+ ani experiență",
 name:"Nume",
@@ -258,7 +241,7 @@ hero_title:"Handyman services in Bucharest",
 hero_sub:"Professional home repair services",
 cta:"Contact us",
 services_title:"Our services",
-contact_title:"Contact",
+contact_title:"Online booking",
 send:"Send → WhatsApp & Telegram",
 footer:"© DANSHYN BUILDERS SRL • Bucharest • 10+ years experience",
 name:"Name",
@@ -281,7 +264,7 @@ hero_title:"Муж на час в Бухаресте",
 hero_sub:"Профессиональный ремонт и услуги для дома",
 cta:"Связаться с нами",
 services_title:"Наши услуги",
-contact_title:"Контакты",
+contact_title:"Онлайн-запись",
 send:"Отправить → WhatsApp & Telegram",
 footer:"© DANSHYN BUILDERS SRL • Бухарест • Опыт 10+ лет",
 name:"Имя",
@@ -316,18 +299,18 @@ name.placeholder=t.name;
 phone.placeholder=t.phone;
 
 services.innerHTML="";
+service_select.innerHTML="";
+
 t.services.forEach(s=>{
 services.innerHTML+=`
 <div class="service" onclick="location.href='#contact'">
 <img src="${IMAGES[s[3]]}">
-<div class="svg-icon">
-<svg viewBox="0 0 24 24"><path d="M3 12h18"/></svg>
-</div>
 <div class="content">
 <b>${s[0]}</b><br>${s[1]}<br>
 <span class="price">de la ${s[2]} RON</span>
 </div>
 </div>`;
+service_select.innerHTML+=`<option value="${s[0]}">${s[0]}</option>`;
 });
 }
 
@@ -340,8 +323,13 @@ render();
 };
 });
 
-function send(){
-const msg="Bună ziua! Am nevoie de un meșter.";
+function sendBooking(){
+const msg=`📅 Programare online
+Serviciu: ${service_select.value}
+Data: ${date.value}
+Ora: ${time.value}
+Nume: ${name.value}
+Telefon: ${phone.value}`;
 window.open("https://wa.me/40725135667?text="+encodeURIComponent(msg));
 window.open("https://t.me/share/url?text="+encodeURIComponent(msg));
 }
@@ -351,6 +339,3 @@ render();
 
 </body>
 </html>
-
-
-
