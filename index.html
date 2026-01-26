@@ -15,8 +15,6 @@ body{
   background:linear-gradient(180deg,#f8fafc,#eef2f7);
   color:#0f172a;
 }
-
-/* HEADER */
 header{
   position:sticky;
   top:0;
@@ -43,11 +41,9 @@ header{
 }
 .lang span.active{opacity:1}
 
-/* HERO */
 .hero{
-  background:
-    linear-gradient(rgba(30,64,175,.55),rgba(30,64,175,.55)),
-    url("https://images.unsplash.com/photo-1503387762-592deb58ef4e");
+  background:linear-gradient(rgba(30,64,175,.55),rgba(30,64,175,.55)),
+  url("https://images.unsplash.com/photo-1503387762-592deb58ef4e");
   background-size:cover;
   background-position:center;
   color:#fff;
@@ -67,7 +63,6 @@ header{
   text-decoration:none;
 }
 
-/* SECTIONS */
 section{
   max-width:1200px;
   margin:auto;
@@ -75,14 +70,12 @@ section{
 }
 h2{text-align:center;margin-bottom:40px}
 
-/* SERVICES */
 .services{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:26px;
 }
 .service{
-  position:relative;
   background:#fff;
   border-radius:20px;
   overflow:hidden;
@@ -92,35 +85,15 @@ h2{text-align:center;margin-bottom:40px}
 }
 .service:hover{
   transform:translateY(-6px) scale(1.02);
-  box-shadow:0 30px 60px rgba(0,0,0,.18);
 }
 .service img{
   width:100%;
   height:180px;
   object-fit:cover;
 }
-.svg-icon{
-  position:absolute;
-  top:14px;
-  left:14px;
-  width:42px;
-  height:42px;
-  background:#2563eb;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 6px 18px rgba(0,0,0,.25);
-}
-.svg-icon svg{
-  width:22px;
-  height:22px;
-  fill:#fff;
-}
 .content{padding:18px}
 .price{font-weight:800;color:#2563eb}
 
-/* CONTACT */
 .contact{
   background:#fff;
   max-width:520px;
@@ -142,7 +115,6 @@ h2{text-align:center;margin-bottom:40px}
   border-radius:12px;
 }
 
-/* FOOTER */
 footer{
   background:#0f172a;
   color:#fff;
@@ -150,7 +122,6 @@ footer{
   padding:28px;
 }
 
-/* MOBILE CTA */
 .mobile-cta{
   position:fixed;
   bottom:18px;
@@ -166,9 +137,7 @@ footer{
   z-index:9999;
   display:none;
 }
-@media(max-width:768px){
-  .mobile-cta{display:block}
-}
+@media(max-width:768px){.mobile-cta{display:block}}
 </style>
 </head>
 
@@ -209,21 +178,20 @@ footer{
 </section>
 
 <footer id="footer"></footer>
-
 <a href="#contact" class="mobile-cta">📞 Comandă meșter</a>
 
 <script>
 const IMAGES={
-electric:"https://images.unsplash.com/photo-1581091870627-3c4c3d2c2b12",
+electric:"https://images.unsplash.com/photo-1621905251189-08b45d6a269e",
 plumbing:"https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
 furniture:"https://images.unsplash.com/photo-1586023492125-27b2c045efd7",
 tv:"https://images.unsplash.com/photo-1593784991095-a205069470b6",
 door:"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
-window:"https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
+window:"https://images.unsplash.com/photo-1560185008-b033106af5c3",
 lighting:"https://images.unsplash.com/photo-1519710164239-da123dc03ef4",
-drywall:"https://images.unsplash.com/photo-1581091012184-7c54c8cdd7b7",
+drywall:"https://images.unsplash.com/photo-1599619351208-3e6c839d6828",
 skirting:"https://images.unsplash.com/photo-1600121848594-d8644e57abab",
-repair:"https://images.unsplash.com/photo-1581579186913-45ac2b68c7e9"
+repair:"https://images.unsplash.com/photo-1581141849291-1125c7b692b5"
 };
 
 const data={
@@ -249,52 +217,6 @@ services:[
 ["Plinte","Montaj și ajustare și altele","120","skirting"],
 ["Reparații diverse","Lucrări mici și altele","120","repair"]
 ]
-},
-en:{
-hero_title:"Handyman services in Bucharest",
-hero_sub:"Professional home repair services",
-cta:"Contact us",
-services_title:"Our services",
-contact_title:"Contact",
-send:"Send → WhatsApp & Telegram",
-footer:"© DANSHYN BUILDERS SRL • Bucharest • 10+ years experience",
-name:"Name",
-phone:"Phone",
-services:[
-["Electrical","Sockets, lighting, panels and more","150","electric"],
-["Plumbing","Toilets, sinks, taps and more","180","plumbing"],
-["Furniture","Assembly and installation and more","200","furniture"],
-["TV mounting","Brackets and cables and more","180","tv"],
-["Doors","Installation and adjustment and more","200","door"],
-["Windows","Repairs and adjustments and more","180","window"],
-["Lighting","Chandeliers and spotlights and more","150","lighting"],
-["Drywall","Walls and ceilings and more","250","drywall"],
-["Skirting boards","Installation and more","120","skirting"],
-["General repairs","Small jobs and more","120","repair"]
-]
-},
-ru:{
-hero_title:"Муж на час в Бухаресте",
-hero_sub:"Профессиональный ремонт и услуги для дома",
-cta:"Связаться с нами",
-services_title:"Наши услуги",
-contact_title:"Контакты",
-send:"Отправить → WhatsApp & Telegram",
-footer:"© DANSHYN BUILDERS SRL • Бухарест • Опыт 10+ лет",
-name:"Имя",
-phone:"Телефон",
-services:[
-["Электрика","Розетки, освещение, щиты и другое","150","electric"],
-["Сантехника","Унитазы, раковины, смесители и другое","180","plumbing"],
-["Мебель","Сборка, монтаж и другое","200","furniture"],
-["Монтаж ТВ","Крепления и кабели и другое","180","tv"],
-["Двери","Монтаж и регулировка и другое","200","door"],
-["Окна","Ремонт и регулировка и другое","180","window"],
-["Освещение","Люстры и светильники и другое","150","lighting"],
-["Гипсокартон","Стены и потолки и другое","250","drywall"],
-["Плинтусы","Монтаж и другое","120","skirting"],
-["Мелкий ремонт","Разные работы и другое","120","repair"]
-]
 }
 };
 
@@ -317,9 +239,6 @@ t.services.forEach(s=>{
 services.innerHTML+=`
 <div class="service" onclick="location.href='#contact'">
 <img src="${IMAGES[s[3]]}">
-<div class="svg-icon">
-<svg viewBox="0 0 24 24"><path d="M3 12h18"/></svg>
-</div>
 <div class="content">
 <b>${s[0]}</b><br>${s[1]}<br>
 <span class="price">de la ${s[2]} RON</span>
