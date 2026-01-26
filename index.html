@@ -189,35 +189,76 @@ footer{
 
 <script>
 const services=[
-["Electricitate","Prize, iluminat, tablouri electrice și altele","150","electrician electrical panel"],
-["Instalații sanitare","WC, chiuvete, baterii și altele","180","plumber bathroom"],
-["Montaj mobilă","Asamblare mobilier și altele","200","furniture assembly"],
-["Montaj TV","Suport TV și altele","180","tv wall mount"],
-["Uși","Montaj și reglaj și altele","200","door installation"],
-["Ferestre","Reglaje și reparații și altele","180","window repair"],
-["Iluminat","Lustre, spoturi și altele","150","ceiling lights"],
-["Gips-carton","Pereți, tavane și altele","250","drywall installation"],
-["Zugrăveli","Vopsire pereți și altele","200","wall painting"],
-["Reparații minore","Lucrări diverse și altele","120","handyman tools"],
-["Plinte","Montaj plinte și altele","120","skirting board"],
-["Electrocasnice","Montaj și altele","180","appliance installation"],
-["Fixare pe perete","Rafturi, oglinzi și altele","120","wall mounting"],
-["Etanșare","Silicon și altele","120","silicone sealing"],
-["Parchet","Montaj și altele","250","laminate flooring"],
-["Jaluzele","Montaj și altele","150","blinds installation"],
-["Băi","Reparații și altele","300","bathroom repair"],
-["Bucătării","Montaj și altele","300","kitchen installation"],
-["Demontare","Mobilă și altele","150","furniture removal"],
-["Servicii personalizate","Spune-ne ce ai nevoie și altele","—","handyman service"]
+["Electricitate","Prize, iluminat, tablouri electrice și altele","150",
+ "https://images.unsplash.com/photo-1581092160562-40aa08e78837"],
+
+["Instalații sanitare","WC, chiuvete, baterii și altele","180",
+ "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b"],
+
+["Montaj mobilă","Asamblare mobilier și altele","200",
+ "https://images.unsplash.com/photo-1581579186989-1c3f2c1c1f85"],
+
+["Montaj TV","Suport TV și altele","180",
+ "https://images.unsplash.com/photo-1593784991095-a205069470b6"],
+
+["Uși","Montaj și reglaj și altele","200",
+ "https://images.unsplash.com/photo-1604014237744-1b1d9e6e8f2a"],
+
+["Ferestre","Reglaje și reparații și altele","180",
+ "https://images.unsplash.com/photo-1600489000022-c2086d79f9d4"],
+
+["Iluminat","Lustre, spoturi și altele","150",
+ "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92"],
+
+["Gips-carton","Pereți, tavane și altele","250",
+ "https://images.unsplash.com/photo-1600585154340-be6161a56a0c"],
+
+["Zugrăveli","Vopsire pereți și altele","200",
+ "https://images.unsplash.com/photo-1598300053653-41c3c4f1b77c"],
+
+["Reparații minore","Lucrări diverse și altele","120",
+ "https://images.unsplash.com/photo-1581244277943-fe4a9c777189"],
+
+["Plinte","Montaj plinte și altele","120",
+ "https://images.unsplash.com/photo-1615873968403-89e068629265"],
+
+["Electrocasnice","Montaj și altele","180",
+ "https://images.unsplash.com/photo-1581091215367-59ab6b3d89f4"],
+
+["Fixare pe perete","Rafturi, oglinzi și altele","120",
+ "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf"],
+
+["Etanșare","Silicon și altele","120",
+ "https://images.unsplash.com/photo-1621905251189-08b45d6a269e"],
+
+["Parchet","Montaj și altele","250",
+ "https://images.unsplash.com/photo-1600585154084-4e5c8c1c6d45"],
+
+["Jaluzele","Montaj și altele","150",
+ "https://images.unsplash.com/photo-1600585154780-6c0c09d7e4c5"],
+
+["Băi","Reparații și altele","300",
+ "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea"],
+
+["Bucătării","Montaj și altele","300",
+ "https://images.unsplash.com/photo-1600585153971-35a9b4e56e2d"],
+
+["Demontare","Mobilă și altele","150",
+ "https://images.unsplash.com/photo-1581579185169-7b90f7f7c8bb"],
+
+["Servicii personalizate","Spune-ne ce ai nevoie și altele","—",
+ "https://images.unsplash.com/photo-1581091012184-7c54c1c2c9a4"]
 ];
 
 const box=document.getElementById("services");
+box.innerHTML="";
 services.forEach(s=>{
   box.innerHTML+=`
   <div class="service" onclick="location.href='#contact'">
-    <img src="https://images.unsplash.com/600x400/?${encodeURIComponent(s[3])}">
+    <img src="${s[3]}" alt="${s[0]}">
     <div class="content">
-      <b>${s[0]}</b><br>${s[1]}<br>
+      <b>${s[0]}</b><br>
+      ${s[1]}<br>
       <span class="price">De la ${s[2]} RON</span>
     </div>
   </div>`;
@@ -230,5 +271,7 @@ function send(){
 }
 </script>
 
+
 </body>
 </html>
+
