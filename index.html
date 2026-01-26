@@ -293,58 +293,58 @@ services:[
 let lang="ro";
 
 function render(){
-const t=data[lang];
-hero_title.innerText=t.hero_title;
-hero_sub.innerText=t.hero_sub;
-cta.innerText=t.cta;
-services_title.innerText=t.services_title;
-contact_title.innerText=t.contact_title;
-send_btn.innerText=t.send;
-footer.innerText=t.footer;
-name.placeholder=t.name;
-phone.placeholder=t.phone;
+  const t = data[lang];
 
-services.innerHTML="";
-service_select.innerHTML="";
+  hero_title.innerText = t.hero_title;
+  hero_sub.innerText   = t.hero_sub;
+  cta.innerText        = t.cta;
+  services_title.innerText = t.services_title;
+  contact_title.innerText  = t.contact_title;
+  send_btn.innerText   = t.send;
+  footer.innerText     = t.footer;
+  name.placeholder     = t.name;
+  phone.placeholder    = t.phone;
 
-t.services.forEach(s=>{
-services.innerHTML+=`
-<div class="service" onclick="location.href='#contact'">
-<img src="${IMAGES[s[3]]}">
-<div class="content">
-<b>${s[0]}</b><br>${s[1]}<br>
-<span class="price">de la ${s[2]} RON</span>
-</div>
-</div>`;
-service_select.innerHTML+=`<option value="${s[0]}">${s[0]}</option>`;
-});
+  services.innerHTML = "";
+  service_select.innerHTML = "";
+
+  t.services.forEach(s=>{
+    let imageHTML = "";
+
+    /* ✅ GIPS-CARTON — 2 КАРТИНКИ */
+    if (s[3] === "drywall") {
+      imageHTML = `
+        <div style="display:grid;grid-template-columns:1fr 1fr">
+          <img src="${IMAGES.drywall[0]}" alt="Gips-carton">
+          <img src="${IMAGES.drywall[1]}" alt="Gips-carton">
+        </div>`;
+    } 
+    /* ✅ ВСЕ ОСТАЛЬНЫЕ — 1 КАРТИНКА */
+    else {
+      imageHTML = `<img src="${IMAGES[s[3]]}" alt="${s[0]}">`;
+    }
+
+    services.innerHTML += `
+      <div class="service" onclick="location.href='#contact'">
+        ${imageHTML}
+        <div class="content">
+          <b>${s[0]}</b><br>${s[1]}<br>
+          <span class="price">de la ${s[2]} RON</span>
+        </div>
+      </div>
+    `;
+
+    service_select.innerHTML += `<option value="${s[0]}">${s[0]}</option>`;
+  });
 }
 
-document.querySelectorAll(".lang span").forEach(el=>{
-el.onclick=()=>{
-document.querySelectorAll(".lang span").forEach(s=>s.classList.remove("active"));
-el.classList.add("active");
-lang=el.dataset.lang;
-render();
-};
-});
-
-function sendBooking(){
-const msg=`📅 Programare online
-Serviciu: ${service_select.value}
-Data: ${date.value}
-Ora: ${time.value}
-Nume: ${name.value}
-Telefon: ${phone.value}`;
-window.open("https://wa.me/40725135667?text="+encodeURIComponent(msg));
-window.open("https://t.me/share/url?text="+encodeURIComponent(msg));
-}
 
 render();
 </script>
 
 </body>
 </html>
+
 
 
 
